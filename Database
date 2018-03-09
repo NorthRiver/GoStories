@@ -1,0 +1,19 @@
+------------------------------------------------------------
+--        Script Postgre 
+------------------------------------------------------------
+
+
+
+------------------------------------------------------------
+-- Table: User
+------------------------------------------------------------
+CREATE TABLE public.User(
+	id_user  SERIAL NOT NULL ,
+	email    VARCHAR (50) NOT NULL UNIQUE,
+	password VARCHAR (25) NOT NULL ,
+	name     VARCHAR (12) NOT NULL UNIQUE,
+	CONSTRAINT prk_constraint_User PRIMARY KEY (id_user)
+)WITHOUT OIDS;
+
+
+
