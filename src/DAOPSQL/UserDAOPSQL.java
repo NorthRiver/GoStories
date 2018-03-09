@@ -1,4 +1,17 @@
-public class UserDAOPLSQL implements UserDAO {
+package DAOPSQL;
+import domain.User;
+import DAO.UserDAO;
+
+public class UserDAOPSQL implements UserDAO {
+	
+	
+	public User connectToUser(String username, String password) {
+		User loggedUser;
+		// Try to match username and password
+		
+		return loggedUser;
+	}
+	
 	//
     @Override
     public void delete(int userId) {
