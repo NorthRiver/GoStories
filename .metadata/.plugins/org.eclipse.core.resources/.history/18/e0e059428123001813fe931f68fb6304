@@ -1,0 +1,10 @@
+
+public interface UserDAOFactory {
+    public static UserDAO getUserDAO(String type) { 
+        if (type.equalsIgnoreCase("jdbc")) {
+            return new UserDAOImpl();
+        } else {
+            return new UserDAOImpl();
+        }
+    }
+}

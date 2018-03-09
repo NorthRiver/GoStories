@@ -1,0 +1,6 @@
+
+public interface UserDAOFactory {
+    public static UserDAO getUserDAO(String type) { 
+    	return new UserDAOImpl();
+    }
+}
