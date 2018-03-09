@@ -27,27 +27,64 @@ public class LoginView extends Application {
 		 Group root = new Group();
 
 	        Scene scene = new Scene(root, 300, 250, Color.LIGHTGREEN);
+            
+	    
+	        
+	        
+	        Button btnLogin = new Button();
+	        Button btnRegister = new Button();
+	        Button btnRecover = new Button();
+	        
+	        btnRegister.setLayoutX(50);
+	        btnRegister.setLayoutY(180);
+	        
+	        btnRecover.setLayoutX(160);
+	        btnRecover.setLayoutY(180);
 
-	        Button btn = new Button();
+	        btnLogin.setLayoutX(120);
+	        btnLogin.setLayoutY(130);
 
-	        btn.setLayoutX(100);
+	        btnLogin.setText("Login");
+	        btnRegister.setText("Register");
+	        btnRecover.setText("Recover" +"\n"+"Password");
+	        
 
-	        btn.setLayoutY(80);
-
-	        btn.setText("Hello World");
-
-	        btn.setOnAction(new EventHandler<ActionEvent>() {
+	        btnLogin.setOnAction(new EventHandler<ActionEvent>() {
 
 
 	            public void handle(ActionEvent event) {
 
-	                System.out.println("Hello World");
+	                System.out.println("Login");
+
+	            }
+
+	        });
+	        
+	        btnRegister.setOnAction(new EventHandler<ActionEvent>() {
+
+
+	            public void handle(ActionEvent event) {
+
+	                System.out.println("Register");
+
+	            }
+
+	        });
+	        
+	        btnRecover.setOnAction(new EventHandler<ActionEvent>() {
+
+
+	            public void handle(ActionEvent event) {
+
+	                System.out.println("Recover Password");
 
 	            }
 
 	        });
 
-	        root.getChildren().add(btn);        
+	        root.getChildren().add(btnLogin);    
+	        root.getChildren().add(btnRegister);
+	        root.getChildren().add(btnRecover);  
 
 	        primaryStage.setScene(scene);
 	        primaryStage.show();
