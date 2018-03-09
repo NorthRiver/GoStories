@@ -1,0 +1,9 @@
+/*
+public class UserDAOFactory extends DAOFactory
+{
+    public static UserDAO getUserDAO(String type)
+    { 
+    	return new UserDAOPLSQL();
+    }
+}
+*/

@@ -1,0 +1,6 @@
+
+public abstract class DAOFactory {
+	UserDAO getUserDAO(){
+		return null;
+	}
+}
