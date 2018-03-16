@@ -11,30 +11,28 @@ import DAO.UserDAO;
 
 public class UserDAOPSQL implements UserDAO {
 	
+	Connection connectionPSQL;
 	
-	public User connectToUser(String username, String password) {
+	public UserDAOPSQL(Connection connectionPSQL){
+		this.connectionPSQL = connectionPSQL;
+	}
+	
+	public User connectToUser(String username, String password) throws Exception {
 		User loggedUser = new User();
-		// Try to match username and password
-		
-		
 		try {
-			Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/javac", "postgres", "padmin");
-			System.out.println("connecte");
-			//Statement st = conn.createStatement();
-			
-			PreparedStatement st = conn.prepareStatement("SELECT * FROM users WHERE name = ? AND password = ?");
+			PreparedStatement st = connectionPSQL.prepareStatement("SELECT * FROM users WHERE name = ? AND password = ?");
 			st.setString(1, username);
 			st.setString(2, password);
 			//ResultSet rs = st.executeQuery("SELECT * FROM users");
 			ResultSet rs = st.executeQuery();
-			while(rs.next()) {
+			if( !rs.next() ) {
+				throw new Exception("Username and password doesn't match.");
+			} else {
 				loggedUser.setAccountName(rs.getString("name"));
 				loggedUser.setEmail(rs.getString("email"));
-				loggedUser.setPassword(rs.getString("password"));
-				
+				rs.close();
+				st.close();				
 			}
-			rs.close();
-			st.close();
     		} catch (SQLException e) {
 			// TODO Auto-generated catch block
     			e.printStackTrace();

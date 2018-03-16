@@ -24,7 +24,7 @@ public class FacadeLogin {
 		return facadeSingleton;
 	}
 	
-	public User login(String username, String password) {
+	public User login(String username, String password) throws Exception {
 		return userDao.connectToUser(username, password);
 	}
 
