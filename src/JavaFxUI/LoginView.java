@@ -17,10 +17,10 @@ public class LoginView extends Scene {
 
 	public LoginView(AnchorPane root, double width, double height) {
 		super(root, width, height);
-		URL url = getClass().getResource("LoginFXML.fxml");
+		URL url = getClass().getResource("LoginStructure.fxml");
 	    FXMLLoader fxmlLoader = new FXMLLoader(url);
 	    try {
-	    VBox root2 = (VBox) fxmlLoader.load();
+	    AnchorPane root2 = (AnchorPane) fxmlLoader.load();
 	    root.getChildren().add(root2);
 	    }
 	    catch (IOException ex) {
