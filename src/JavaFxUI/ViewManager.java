@@ -2,6 +2,7 @@ package JavaFxUI;
 
 import javafx.application.Application;
 import javafx.scene.*;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class ViewManager extends Application {
@@ -16,7 +17,7 @@ public class ViewManager extends Application {
 		// TODO Auto-generated method stub
 		primaryStage.setTitle("Login");
 		
-		Group root = new Group();
+		AnchorPane root = new AnchorPane();
 		Scene scene = new LoginView(root,300, 300);
 		primaryStage.setScene(scene);
         primaryStage.show();
