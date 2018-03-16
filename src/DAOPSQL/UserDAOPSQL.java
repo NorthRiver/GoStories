@@ -1,13 +1,42 @@
 package DAOPSQL;
 import domain.User;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 import DAO.UserDAO;
 
 public class UserDAOPSQL implements UserDAO {
 	
 	
 	public User connectToUser(String username, String password) {
-		User loggedUser;
+		User loggedUser = new User();
 		// Try to match username and password
+		
+		
+		try {
+			Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/javac", "postgres", "padmin");
+			System.out.println("connecte");
+			//Statement st = conn.createStatement();
+			
+			PreparedStatement st = conn.prepareStatement("SELECT * FROM users WHERE name = ? AND password = ?");
+			st.setString(1, username);
+			st.setString(2, password);
+			//ResultSet rs = st.executeQuery("SELECT * FROM users");
+			ResultSet rs = st.executeQuery();
+			while(rs.next()) {
+				System.out.println(rs.getString(3));
+			}
+			rs.close();
+			st.close();
+    		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+    			e.printStackTrace();
+		}
+        
 		
 		return loggedUser;
 	}
