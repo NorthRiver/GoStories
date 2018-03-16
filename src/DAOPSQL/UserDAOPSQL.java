@@ -28,7 +28,10 @@ public class UserDAOPSQL implements UserDAO {
 			//ResultSet rs = st.executeQuery("SELECT * FROM users");
 			ResultSet rs = st.executeQuery();
 			while(rs.next()) {
-				System.out.println(rs.getString(3));
+				loggedUser.setAccountName(rs.getString("name"));
+				loggedUser.setEmail(rs.getString("email"));
+				loggedUser.setPassword(rs.getString("password"));
+				
 			}
 			rs.close();
 			st.close();
@@ -67,4 +70,5 @@ public class UserDAOPSQL implements UserDAO {
     public void update(User user) {
         // update user information in user table
     }
+    
 }
