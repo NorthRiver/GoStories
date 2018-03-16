@@ -15,9 +15,10 @@ public class LoginController {
 		FacadeLogin facade = FacadeLogin.getFacadeLogin();
 		try {
 			User moi = facade.login(usernameText.getText(), pswdText.getText());
+			System.out.println(moi);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e);
 		}
 	}
 }

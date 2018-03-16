@@ -26,6 +26,8 @@ public class UserDAOPSQL implements UserDAO {
 			//ResultSet rs = st.executeQuery("SELECT * FROM users");
 			ResultSet rs = st.executeQuery();
 			if( !rs.next() ) {
+				rs.close();
+				st.close();				
 				throw new Exception("Username and password doesn't match.");
 			} else {
 				loggedUser.setAccountName(rs.getString("name"));
