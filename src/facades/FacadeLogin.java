@@ -8,11 +8,11 @@ import domain.User;
 public class FacadeLogin {
 
 	private static FacadeLogin facadeSingleton;
-	private FactoryDAO factoryDao;
 	private UserDAO userDao;
 	
 	
 	private FacadeLogin() {
+		FactoryDAO factoryDao;
 		factoryDao = FactoryDAOPSQL.getFactoryDAO();
 		userDao = factoryDao.getUserDAO();
 	}
