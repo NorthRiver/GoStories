@@ -13,7 +13,7 @@ public class FacadeLogin {
 	
 	private FacadeLogin() {
 		FactoryDAO factoryDao;
-		factoryDao = FactoryDAOPSQL.getFactoryDAO();
+		factoryDao = FactoryDAO.getFactory();
 		userDao = factoryDao.getUserDAO();
 	}
 	
