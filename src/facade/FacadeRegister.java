@@ -1,4 +1,4 @@
-package facades;
+package facade;
 
 import java.util.*;
 
@@ -22,9 +22,5 @@ public class FacadeRegister extends AbstractFacade {
         // TODO implement here
     }
 
-    /**
-     * 
-     */
-    private abstract void AbstractFacade();
 
 }

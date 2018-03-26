@@ -1,6 +1,8 @@
-package facades;
+package facade;
 
 import java.util.*;
+
+import domain.User;
 
 /**
  * 
@@ -21,10 +23,5 @@ public class FacadeManageUser extends AbstractFacade {
         // TODO implement here
         return null;
     }
-
-    /**
-     * 
-     */
-    private abstract void AbstractFacade();
 
 }

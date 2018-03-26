@@ -1,6 +1,8 @@
-package facades;
+package facade;
 
 import java.util.*;
+
+import domain.Report;
 
 /**
  * 
@@ -19,7 +21,7 @@ public class FacadeReadReport extends AbstractFacade {
      */
     public void deleteReport(Report rep) {
         // TODO implement here
-        return null;
+        return;
     }
 
     /**
@@ -59,10 +61,5 @@ public class FacadeReadReport extends AbstractFacade {
         // TODO implement here
         return null;
     }
-
-    /**
-     * 
-     */
-    private abstract void AbstractFacade();
 
 }
