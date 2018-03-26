@@ -2,6 +2,9 @@ package UseCases.tagView;
 
 import java.util.*;
 
+import domain.Story;
+import javafx.event.ActionEvent;
+
 /**
  * 
  */
@@ -26,25 +29,25 @@ public class TagController {
      */
     public void init(Story story) {
         // TODO implement here
-        return null;
+        return;
     }
 
     /**
      * @param event 
      * @return
      */
-    public void validate(void event) {
+    public void validate(ActionEvent event) {
         // TODO implement here
-        return null;
+        return;
     }
 
     /**
      * @param event 
      * @return
      */
-    public void cancel(void event) {
+    public void cancel(ActionEvent event) {
         // TODO implement here
-        return null;
+        return;
     }
 
 }
