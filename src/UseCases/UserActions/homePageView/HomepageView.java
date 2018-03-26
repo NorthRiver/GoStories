@@ -2,13 +2,19 @@ package UseCases.UserActions.homePageView;
 
 import java.util.*;
 
-public class HomepageView {
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 
-    public HomepageView() {
-    }
+public class HomepageView extends Scene{
 
 
-    public void init() {
+
+    public HomepageView(Parent root, double width, double height) {
+		super(root, width, height);
+		// TODO Auto-generated constructor stub
+	}
+
+	public void init() {
         
         return;
     }

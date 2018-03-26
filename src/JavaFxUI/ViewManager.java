@@ -1,9 +1,12 @@
-package javaFxUI;
+package JavaFxUI;
 
 import java.util.*;
 
 import DAO.FactoryDAO;
 import UseCases.UserActions.loginView.LoginView;
+import domain.Page;
+import domain.Story;
+import domain.User;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
