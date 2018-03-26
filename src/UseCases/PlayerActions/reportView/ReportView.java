@@ -2,6 +2,8 @@ package UseCases.PlayerActions.reportView;
 
 import java.util.*;
 
+import domain.Page;
+
 /**
  * 
  */

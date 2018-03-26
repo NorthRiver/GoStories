@@ -2,6 +2,10 @@ package UseCases.AdminActions.manageStoriesView;
 
 import java.util.*;
 
+import domain.Story;
+import javafx.event.ActionEvent;
+import javafx.scene.control.TextField;
+
 /**
  * 
  */
@@ -25,7 +29,7 @@ public class ManageStoriesController {
      */
     public void init() {
         // TODO implement here
-        return null;
+        return;
     }
 
     /**
@@ -34,7 +38,7 @@ public class ManageStoriesController {
      */
     private void changeDisplayedStory(Story[] storylist) {
         // TODO implement here
-        return null;
+        return;
     }
 
     /**
@@ -43,7 +47,7 @@ public class ManageStoriesController {
      */
     public void tagsButton(ActionEvent event) {
         // TODO implement here
-        return null;
+        return;
     }
 
     /**
@@ -52,7 +56,7 @@ public class ManageStoriesController {
      */
     public void displaySearchResult(ActionEvent event) {
         // TODO implement here
-        return null;
+        return;
     }
 
 }

@@ -37,7 +37,7 @@ public class ViewManager extends Application {
      */
     public static void goToLogin() {
         // TODO implement here
-        return null;
+        return;
     }
 
     /**
@@ -45,7 +45,7 @@ public class ViewManager extends Application {
      */
     public static void goToForgetPassword() {
         // TODO implement here
-        return null;
+        return;
     }
 
     /**
@@ -53,7 +53,7 @@ public class ViewManager extends Application {
      */
     public static void gotToRegister() {
         // TODO implement here
-        return null;
+        return;
     }
 
     /**
@@ -68,7 +68,7 @@ public class ViewManager extends Application {
      */
     public static void goToReadReport() {
         // TODO implement here
-        return null;
+        return;
     }
 
     /**
@@ -76,7 +76,7 @@ public class ViewManager extends Application {
      */
     public static void goToManageStories() {
         // TODO implement here
-        return null;
+        return;
     }
 
     /**
@@ -84,7 +84,7 @@ public class ViewManager extends Application {
      */
     public static void gotToManageUser() {
         // TODO implement here
-        return null;
+        return;
     }
 
     /**

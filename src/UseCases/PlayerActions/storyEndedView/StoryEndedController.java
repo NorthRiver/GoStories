@@ -2,6 +2,8 @@ package UseCases.PlayerActions.storyEndedView;
 
 import java.util.*;
 
+import javafx.event.ActionEvent;
+
 /**
  * 
  */

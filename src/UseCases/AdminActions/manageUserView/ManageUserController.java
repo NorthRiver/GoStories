@@ -2,6 +2,9 @@ package UseCases.AdminActions.manageUserView;
 
 import java.util.*;
 
+import javafx.event.ActionEvent;
+import javafx.scene.control.TextField;
+
 /**
  * 
  */
@@ -26,7 +29,7 @@ public class ManageUserController {
      */
     public void displaySearchResult(ActionEvent event) {
         // TODO implement here
-        return null;
+        return;
     }
 
     /**
@@ -35,7 +38,7 @@ public class ManageUserController {
      */
     public void renameButton(ActionEvent event) {
         // TODO implement here
-        return null;
+        return;
     }
 
     /**
@@ -44,7 +47,7 @@ public class ManageUserController {
      */
     public void switchBanButton(ActionEvent event) {
         // TODO implement here
-        return null;
+        return;
     }
 
     /**

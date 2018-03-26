@@ -2,6 +2,9 @@ package UseCases.AdminActions.readReportView;
 
 import java.util.*;
 
+import domain.Report;
+import javafx.event.ActionEvent;
+
 /**
  * 
  */
@@ -36,7 +39,7 @@ public class ReadReportController {
      */
     public void delete(ActionEvent event) {
         // TODO implement here
-        return null;
+        return;
     }
 
     /**
@@ -44,7 +47,7 @@ public class ReadReportController {
      */
     public void init() {
         // TODO implement here
-        return null;
+        return;
     }
 
     /**
@@ -53,34 +56,34 @@ public class ReadReportController {
      */
     private void changeDisplayedReport(Report[] replist) {
         // TODO implement here
-        return null;
+        return;
     }
 
     /**
      * @param event ActionEvent 
      * @return
      */
-    public void displayReportByDate(void event ActionEvent) {
+    public void displayReportByDate(ActionEvent event) {
         // TODO implement here
-        return null;
+        return;
     }
 
     /**
      * @param event ActionEvent 
      * @return
      */
-    public void displayReportByStory(void event ActionEvent) {
+    public void displayReportByStory(ActionEvent event) {
         // TODO implement here
-        return null;
+        return;
     }
 
     /**
      * @param event ActionEvent 
      * @return
      */
-    public void displayReportByUser(void event ActionEvent) {
+    public void displayReportByUser(ActionEvent event) {
         // TODO implement here
-        return null;
+        return;
     }
 
     /**
@@ -89,7 +92,7 @@ public class ReadReportController {
      */
     public void displatMultiSearchResult(ActionEvent event) {
         // TODO implement here
-        return null;
+        return;
     }
 
 }
