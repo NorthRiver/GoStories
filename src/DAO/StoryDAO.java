@@ -2,97 +2,38 @@ package DAO;
 
 import java.util.*;
 
-/**
- * 
- */
+import domain.Comment;
+import domain.Page;
+import domain.Rating;
+import domain.Story;
+import domain.User;
+
+
 public abstract class StoryDAO {
 
-    /**
-     * Default constructor
-     */
+
     public StoryDAO() {
     }
 
-    /**
-     * @param storyName 
-     * @return
-     */
-    public Story getStoryByName(String storyName) {
-        // TODO implement here
-        return null;
-    }
 
-    /**
-     * @param author 
-     * @return
-     */
-    public Set<Story> getStoryByUser(User author) {
-        // TODO implement here
-        return null;
-    }
+    public abstract Story getStoryByName(String storyName);
 
-    /**
-     * @param category 
-     * @return
-     */
-    public Set<Story> getAllStories(String category) {
-        // TODO implement here
-        return null;
-    }
+    public abstract Set<Story> getStoryByUser(User author);
 
-    /**
-     * @param story 
-     * @param comment
-     */
-    public void commentStory(Story story, Comment comment) {
-        // TODO implement here
-    }
+    public abstract Set<Story> getAllStories(String category);
 
-    /**
-     * @param story 
-     * @param rating
-     */
-    public void rateAStory(Story story, Rating rating) {
-        // TODO implement here
-    }
+    public abstract void commentStory(Story story, Comment comment);
 
-    /**
-     * @param story 
-     * @param page
-     */
-    public void addPageToStory(Story story, Page page) {
-        // TODO implement here
-    }
+    public abstract void rateAStory(Story story, Rating rating);
 
-    /**
-     * @param story
-     */
-    public void saveAStory(Story story) {
-        // TODO implement here
-    }
+    public abstract void addPageToStory(Story story, Page page);
 
-    /**
-     * @param story
-     */
-    public void disableStory(Story story) {
-        // TODO implement here
-    }
+    public abstract void saveAStory(Story story);
 
-    /**
-     * @param user 
-     * @return
-     */
-    public Set<Story> getStoryBuyedUser(User user) {
-        // TODO implement here
-        return null;
-    }
+    public abstract void disableStory(Story story);
 
-    /**
-     * @param user 
-     * @param story
-     */
-    public void buyAStory(User user, Story story) {
-        // TODO implement here
-    }
+    public abstract Set<Story> getStoryBuyedUser(User user);
+
+    public abstract void buyAStory(User user, Story story);
 
 }

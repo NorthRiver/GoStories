@@ -2,42 +2,21 @@ package DAO;
 
 import java.util.*;
 
-/**
- * 
- */
+import domain.Page;
+import domain.Report;
+import domain.Story;
+import domain.User;
+
+
 public abstract class ReportDAO {
 
-    /**
-     * Default constructor
-     */
-    public ReportDAO() {
-    }
 
-    /**
-     * @param reportId 
-     * @return
-     */
-    public Report getReportById(String reportId) {
-        // TODO implement here
-        return null;
-    }
+    public abstract Report getReportById(String reportId);
 
-    /**
-     * @return
-     */
-    public Set<Report> getLatestReport() {
-        // TODO implement here
-        return null;
-    }
 
-    /**
-     * @param story 
-     * @param page 
-     * @param user 
-     * @param report
-     */
-    public void sendReport(Story story, Page page, User user, Report report) {
-        // TODO implement here
-    }
+    public abstract Set<Report> getLatestReport();
+
+
+    public abstract void sendReport(Story story, Page page, User user, Report report);
 
 }

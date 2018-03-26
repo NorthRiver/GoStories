@@ -2,41 +2,23 @@ package DAO;
 
 import java.util.*;
 
-/**
- * 
- */
+import domain.Link;
+import domain.Page;
+import domain.Story;
+
+
 public abstract class PageDAO {
 
-    /**
-     * Default constructor
-     */
-    public PageDAO() {
-    }
+ 
 
-    /**
-     * @param story 
-     * @param pageNumber 
-     * @return
-     */
-    public Page getPageByNumber(Story story, String pageNumber) {
-        // TODO implement here
-        return null;
-    }
+    
 
-    /**
-     * @param page 
-     * @param link
-     */
-    public void addLink(Page page, Link link) {
-        // TODO implement here
-    }
+    public abstract Page getPageByNumber(Story story, String pageNumber);
+     
+    public abstract void addLink(Page page, Link link);
 
-    /**
-     * @param page 
-     * @param link
-     */
-    public void removeLink(Page page, Link link) {
-        // TODO implement here
-    }
+    public abstract void removeLink(Page page, Link link);
+
+    
 
 }
