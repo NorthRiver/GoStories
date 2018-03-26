@@ -2,6 +2,9 @@ package facade;
 
 import java.util.*;
 
+import domain.Story;
+import domain.User;
+
 /**
  * 
  */
@@ -26,7 +29,7 @@ public class FacadeStoryEnded extends AbstractFacade {
     /**
      * @param value
      */
-    public void rateStory(Int value) {
+    public void rateStory(int value) {
         // TODO implement here
     }
 
@@ -37,10 +40,5 @@ public class FacadeStoryEnded extends AbstractFacade {
     public void subscribe(User player, User author) {
         // TODO implement here
     }
-
-    /**
-     * 
-     */
-    private abstract void AbstractFacade();
 
 }

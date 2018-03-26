@@ -1,6 +1,8 @@
-package facades;
+package facade;
 
 import java.util.*;
+
+import domain.Story;
 
 /**
  * 
@@ -18,14 +20,9 @@ public class FacadeTagView extends AbstractFacade {
      * @param tags 
      * @return
      */
-    public void changeTags(Story story, Tags[] tags) {
+    public void changeTags(Story story, String[] tags) {
         // TODO implement here
-        return null;
+        return;
     }
-
-    /**
-     * 
-     */
-    private abstract void AbstractFacade();
 
 }

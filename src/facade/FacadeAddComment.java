@@ -2,6 +2,8 @@ package facade;
 
 import java.util.*;
 
+import domain.Story;
+
 /**
  * 
  */
@@ -22,9 +24,5 @@ public class FacadeAddComment extends AbstractFacade {
         // TODO implement here
     }
 
-    /**
-     * 
-     */
-    private abstract void AbstractFacade();
 
 }

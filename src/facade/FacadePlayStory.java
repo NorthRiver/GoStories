@@ -2,6 +2,10 @@ package facade;
 
 import java.util.*;
 
+import domain.Page;
+import domain.Story;
+import domain.User;
+
 /**
  * 
  */
@@ -42,9 +46,5 @@ public class FacadePlayStory extends AbstractFacade {
         // TODO implement here
     }
 
-    /**
-     * 
-     */
-    private abstract void AbstractFacade();
 
 }

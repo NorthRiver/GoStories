@@ -1,6 +1,8 @@
-package facades;
+package facade;
 
 import java.util.*;
+
+import domain.User;
 
 /**
  * 
@@ -20,12 +22,7 @@ public class FacadeRename extends AbstractFacade {
      */
     public void renameUser(User user, String name) {
         // TODO implement here
-        return null;
+        return;
     }
-
-    /**
-     * 
-     */
-    private abstract void AbstractFacade();
 
 }

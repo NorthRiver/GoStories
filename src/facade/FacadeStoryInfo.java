@@ -2,6 +2,9 @@ package facade;
 
 import java.util.*;
 
+import domain.Story;
+import domain.User;
+
 /**
  * 
  */
@@ -31,10 +34,5 @@ public class FacadeStoryInfo extends AbstractFacade {
         // TODO implement here
         return null;
     }
-
-    /**
-     * 
-     */
-    private abstract void AbstractFacade();
 
 }

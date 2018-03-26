@@ -1,6 +1,8 @@
-package facades;
+package facade;
 
 import java.util.*;
+
+import domain.User;
 
 /**
  * 
@@ -20,9 +22,5 @@ public class FacadeEditProfile extends AbstractFacade {
         // TODO implement here
     }
 
-    /**
-     * 
-     */
-    private abstract void AbstractFacade();
 
 }
