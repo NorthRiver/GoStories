@@ -2,6 +2,8 @@ package DAOPSQL;
 
 import java.util.*;
 
+import DAO.UserDAO;
+
 /**
  * 
  */
