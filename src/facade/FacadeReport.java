@@ -1,4 +1,4 @@
-package facade;
+package facades;
 
 import java.util.*;
 
@@ -12,7 +12,6 @@ public class FacadeReport extends AbstractFacade {
      */
     public FacadeReport() {
     }
-
 
     /**
      * @param page 

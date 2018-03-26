@@ -1,4 +1,4 @@
-package facade;
+package facades;
 
 import java.util.*;
 
@@ -13,13 +13,12 @@ public class FacadeBanMenu extends AbstractFacade {
     public FacadeBanMenu() {
     }
 
-
     /**
      * @param user 
      * @param day 
      * @return
      */
-    public void banUser(void user, IInt day) {
+    public void banUser(User user, IInt day) {
         // TODO implement here
         return null;
     }

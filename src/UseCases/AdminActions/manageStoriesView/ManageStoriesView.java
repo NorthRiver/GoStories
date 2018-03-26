@@ -1,4 +1,4 @@
-package UseCases.AdminActions.manageStoriesView;
+package JavaFxUI;
 
 import java.util.*;
 

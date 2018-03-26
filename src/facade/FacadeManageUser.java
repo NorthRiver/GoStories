@@ -1,4 +1,4 @@
-package facade;
+package facades;
 
 import java.util.*;
 
@@ -13,12 +13,11 @@ public class FacadeManageUser extends AbstractFacade {
     public FacadeManageUser() {
     }
 
-
     /**
      * @param offset 
      * @return
      */
-    public void[] getUserList(int offset) {
+    public User[] getUserList(int offset) {
         // TODO implement here
         return null;
     }
