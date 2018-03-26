@@ -3,11 +3,10 @@ package UseCases.tagView;
 import java.util.*;
 
 import domain.Story;
-<<<<<<< HEAD
-=======
+
 import javafx.scene.Parent;
 import javafx.scene.Scene;
->>>>>>> Tristan
+
 
 /**
  * 
@@ -28,11 +27,7 @@ public class TagView extends Scene{
      * @return
      */
     public void init(Story story) {
-<<<<<<< HEAD
-      
-=======
         // TODO implement here
->>>>>>> Tristan
         return;
     }
 
