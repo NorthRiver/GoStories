@@ -16,12 +16,12 @@ public class BanMenuController {
     /**
      * 
      */
-    private void currentUser;
+    private User currentUser;
 
     /**
      * 
      */
-    public void numberOfDay;
+    public TextField numberOfDay;
 
 
 
@@ -29,7 +29,7 @@ public class BanMenuController {
      * @param event 
      * @return
      */
-    public void validate(void event) {
+    public void validate(ActionEvent event) {
         // TODO implement here
         return null;
     }
@@ -38,7 +38,7 @@ public class BanMenuController {
      * @param event 
      * @return
      */
-    public void cancel(void event) {
+    public void cancel(ActionEvent event) {
         // TODO implement here
         return null;
     }
@@ -47,7 +47,7 @@ public class BanMenuController {
      * @param user 
      * @return
      */
-    public void init(void user) {
+    public void init(User user) {
         // TODO implement here
         return null;
     }

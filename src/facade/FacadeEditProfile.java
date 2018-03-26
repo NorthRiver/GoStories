@@ -1,4 +1,4 @@
-package facade;
+package facades;
 
 import java.util.*;
 
@@ -13,11 +13,10 @@ public class FacadeEditProfile extends AbstractFacade {
     public FacadeEditProfile() {
     }
 
-
     /**
      * @param user
      */
-    public void modifyProfile(void user) {
+    public void modifyProfile(User user) {
         // TODO implement here
     }
 

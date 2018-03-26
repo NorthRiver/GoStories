@@ -16,7 +16,7 @@ public class ManageUserController {
     /**
      * 
      */
-    private void usernameField;
+    private TextField usernameField;
 
 
 
@@ -24,7 +24,7 @@ public class ManageUserController {
      * @param event 
      * @return
      */
-    public void displaySearchResult(void event) {
+    public void displaySearchResult(ActionEvent event) {
         // TODO implement here
         return null;
     }
@@ -33,7 +33,7 @@ public class ManageUserController {
      * @param event 
      * @return
      */
-    public void renameButton(void event) {
+    public void renameButton(ActionEvent event) {
         // TODO implement here
         return null;
     }
@@ -42,7 +42,7 @@ public class ManageUserController {
      * @param event 
      * @return
      */
-    public void switchBanButton(void event) {
+    public void switchBanButton(ActionEvent event) {
         // TODO implement here
         return null;
     }
