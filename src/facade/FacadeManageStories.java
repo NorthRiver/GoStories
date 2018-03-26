@@ -1,4 +1,4 @@
-package facade;
+package facades;
 
 import java.util.*;
 
@@ -13,12 +13,11 @@ public class FacadeManageStories extends AbstractFacade {
     public FacadeManageStories() {
     }
 
-
     /**
      * @param user 
      * @return
      */
-    public Story[] getStoriesByUser(void user) {
+    public Story[] getStoriesByUser(User user) {
         // TODO implement here
         return null;
     }
@@ -28,7 +27,7 @@ public class FacadeManageStories extends AbstractFacade {
      * @param name 
      * @return
      */
-    public Story[] getStoriesByUserAndName(void user, String name) {
+    public Story[] getStoriesByUserAndName(User user, String name) {
         // TODO implement here
         return null;
     }

@@ -1,4 +1,4 @@
-package facade;
+package facades;
 
 import java.util.*;
 
@@ -12,6 +12,12 @@ public class FacadeLogin extends AbstractFacade {
      */
     public FacadeLogin() {
     }
+
+    /**
+     * 
+     */
+    private UserDAO userDao;
+
 
 
     /**

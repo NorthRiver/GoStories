@@ -16,12 +16,12 @@ public class RenameController {
     /**
      * 
      */
-    public void currentUser;
+    public User currentUser;
 
     /**
      * 
      */
-    public void newName;
+    public TextField newName;
 
 
 
@@ -29,7 +29,7 @@ public class RenameController {
      * @param user 
      * @return
      */
-    public void init(void user) {
+    public void init(User user) {
         // TODO implement here
         return null;
     }
@@ -38,7 +38,7 @@ public class RenameController {
      * @param event 
      * @return
      */
-    public void validate(void event) {
+    public void validate(ActionEvent event) {
         // TODO implement here
         return null;
     }
@@ -47,7 +47,7 @@ public class RenameController {
      * @param event 
      * @return
      */
-    public void cancel(void event) {
+    public void cancel(ActionEvent event) {
         // TODO implement here
         return null;
     }

@@ -16,7 +16,7 @@ public class ManageStoriesController {
     /**
      * 
      */
-    private void storynameField;
+    private TextField storynameField;
 
 
 
@@ -41,7 +41,7 @@ public class ManageStoriesController {
      * @param event 
      * @return
      */
-    public void tagsButton(void event) {
+    public void tagsButton(ActionEvent event) {
         // TODO implement here
         return null;
     }
@@ -50,7 +50,7 @@ public class ManageStoriesController {
      * @param event 
      * @return
      */
-    public void displaySearchResult(void event) {
+    public void displaySearchResult(ActionEvent event) {
         // TODO implement here
         return null;
     }

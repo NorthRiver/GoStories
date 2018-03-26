@@ -34,7 +34,7 @@ public class ReadReportController {
      * @param event 
      * @return
      */
-    public void delete(void event) {
+    public void delete(ActionEvent event) {
         // TODO implement here
         return null;
     }
@@ -87,16 +87,9 @@ public class ReadReportController {
      * @param event 
      * @return
      */
-    public void displatMultiSearchResult(void event) {
+    public void displatMultiSearchResult(ActionEvent event) {
         // TODO implement here
         return null;
-    }
-
-    /**
-     * @param event
-     */
-    public void goToReportedPage(ActionEvent event) {
-        // TODO implement here
     }
 
 }

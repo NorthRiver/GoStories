@@ -2,34 +2,35 @@ package javaFxUI;
 
 import java.util.*;
 
+import DAO.FactoryDAO;
+import UseCases.UserActions.loginView.LoginView;
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+
 /**
  * 
  */
-public class ViewManager {
+public class ViewManager extends Application {
 
-    /**
-     * Default constructor
-     */
-    public ViewManager() {
+	public static void main(String[] args) {
+		FactoryDAO.create("PSQL");
+        Application.launch(ViewManager.class, args);
+
     }
 
-    /**
-     * @param args 
-     * @return
-     */
-    public static void main(Set<String> args) {
-        // TODO implement here
-        return null;
-    }
-
-    /**
-     * @param primaryStage 
-     * @return
-     */
-    public static void start(void primaryStage) {
-        // TODO implement here
-        return null;
-    }
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		// TODO Auto-generated method stub
+		primaryStage.setTitle("Login");
+		
+		AnchorPane root = new AnchorPane();
+		Scene scene = new LoginView(root,300, 300);
+		primaryStage.setScene(scene);
+        primaryStage.show();
+		
+	}
 
     /**
      * @return

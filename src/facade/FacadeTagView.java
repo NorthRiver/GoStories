@@ -1,4 +1,4 @@
-package facade;
+package facades;
 
 import java.util.*;
 

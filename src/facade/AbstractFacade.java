@@ -1,4 +1,4 @@
-package facade;
+package facades;
 
 import java.util.*;
 
@@ -16,7 +16,7 @@ public abstract class AbstractFacade {
     /**
      * 
      */
-    private static void myUser;
+    private static User myUser;
 
     /**
      * 
@@ -26,7 +26,7 @@ public abstract class AbstractFacade {
     /**
      * @return
      */
-    public static void getUser() {
+    public static User getUser() {
         // TODO implement here
         return null;
     }
@@ -34,7 +34,7 @@ public abstract class AbstractFacade {
     /**
      * @param user
      */
-    public static void setUser(void user) {
+    public static void setUser(User user) {
         // TODO implement here
     }
 

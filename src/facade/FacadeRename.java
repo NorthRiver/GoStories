@@ -1,4 +1,4 @@
-package facade;
+package facades;
 
 import java.util.*;
 
@@ -13,13 +13,12 @@ public class FacadeRename extends AbstractFacade {
     public FacadeRename() {
     }
 
-
     /**
      * @param user 
      * @param name 
      * @return
      */
-    public void renameUser(void user, String name) {
+    public void renameUser(User user, String name) {
         // TODO implement here
         return null;
     }

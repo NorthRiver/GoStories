@@ -18,7 +18,7 @@ public class RenameView {
      * @param user 
      * @return
      */
-    public void init(void user) {
+    public void init(User user) {
         // TODO implement here
         return null;
     }
