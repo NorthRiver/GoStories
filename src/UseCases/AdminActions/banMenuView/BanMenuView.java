@@ -2,6 +2,8 @@ package UseCases.AdminActions.banMenuView;
 
 import java.util.*;
 
+import domain.User;
+
 /**
  * 
  */
@@ -20,7 +22,7 @@ public class BanMenuView {
      */
     public void init(User user) {
         // TODO implement here
-        return null;
+        return;
     }
 
 }
