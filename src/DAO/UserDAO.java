@@ -2,6 +2,9 @@ package DAO;
 
 import java.util.*;
 
+import domain.Story;
+import domain.User;
+
 /**
  * 
  */
@@ -17,68 +20,20 @@ public abstract class UserDAO {
      * @param  username 
      * @return
      */
-    public void findUserByUsername(String  username) {
-        // TODO implement here
-        return null;
-    }
+    public abstract void findUserByUsername(String  username);
+   
+    public abstract User connectToUser(String username, String password);
 
-    /**
-     * @param username 
-     * @param password 
-     * @return
-     */
-    public User connectToUser(String username, String password) {
-        // TODO implement here
-        return null;
-    }
+    public abstract void disableUser(User user);
 
-    /**
-     * @param user
-     */
-    public void disableUser(User user) {
-        // TODO implement here
-    }
+    public abstract void saveUser(User user);
 
-    /**
-     * @param user
-     */
-    public void saveUser(User user) {
-        // TODO implement here
-    }
+    public abstract void subscribeToAuthor(User subscriber, User author);
 
-    /**
-     * @param subscriber 
-     * @param author
-     */
-    public void subscribeToAuthor(User subscriber, User author) {
-        // TODO implement here
-    }
+    public abstract  Set<User> getSubscribedUser(User subscriber) ;
 
-    /**
-     * @param subscriber 
-     * @return
-     */
-    public Set<User> getSubscribedUser(User subscriber) {
-        // TODO implement here
-        return null;
-    }
+    public abstract Set<User> getAllUser(String username) ;
 
-    /**
-     * @param username 
-     * @return
-     */
-    public Set<User> getAllUser(String username) {
-        // TODO implement here
-        return null;
-    }
-
-    /**
-     * @param story 
-     * @return
-     */
-    public User getAuthorByStory(Story story) {
-        // TODO implement here
-        return null;
-    }
+    public  abstract User getAuthorByStory(Story story) ;
 
 }

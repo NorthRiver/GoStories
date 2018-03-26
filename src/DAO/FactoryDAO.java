@@ -2,74 +2,41 @@ package DAO;
 
 import java.util.*;
 
+import DAOPSQL.FactoryDAOPSQL;
+
 /**
  * 
  */
 public abstract class FactoryDAO {
 
-    /**
-     * Default constructor
-     */
-    public FactoryDAO() {
-    }
 
-    /**
-     * 
-     */
-    private static FactoryDAO singletonFactory;
+    static protected FactoryDAO singleFactory;
 
 
-
-
-
-
-    /**
-     * @return
-     */
-    public StoryDAO getStoryDAO() {
-        // TODO implement here
-        return null;
-    }
-
-    /**
-     * @return
-     */
-    public PageDAO getPageDAO() {
-        // TODO implement here
-        return null;
-    }
-
-    /**
-     * @return
-     */
     public static FactoryDAO getFactory() {
         // TODO implement here
-        return null;
+        return singleFactory;
     }
 
     /**
      * @param persistenceType 
      * @return
      */
-    public static void create(String persistenceType) {
-        // TODO implement here
-        return null;
+    public static FactoryDAO create(String persistenceType) {
+    	switch (persistenceType) {
+		case "PSQL":
+		default:
+			singleFactory = new FactoryDAOPSQL();
+		}
+		return singleFactory;
     }
 
-    /**
-     * @return
-     */
-    public SaveDAO getSaveDAO() {
-        // TODO implement here
-        return null;
-    }
 
-    /**
-     * @return
-     */
-    public ReportDAO getReportDAO() {
-        // TODO implement here
-        return null;
-    }
+    public abstract SaveDAO getSaveDAO() ;
+    public abstract ReportDAO getReportDAO();
+    public abstract UserDAO getUserDAO();
+    public abstract StoryDAO getStoryDAO();
+    public abstract PageDAO getPageDAO();
+
 
 }
