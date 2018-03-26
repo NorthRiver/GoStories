@@ -25,7 +25,7 @@ public class StoryInfoView extends Scene {
      * 
      */
     public void init() {
-        // TODO implement here
+       
     }
 
 }

@@ -10,50 +10,30 @@ import javafx.event.ActionEvent;
  */
 public class ReadReportController {
 
-    /**
-     * Default constructor
-     */
+
     public ReadReportController() {
     }
 
-    /**
-     * 
-     */
+
     private String username;
 
-    /**
-     * 
-     */
+
     private String storyname;
 
-    /**
-     * 
-     */
     private Date date;
 
 
-
-    /**
-     * @param event 
-     * @return
-     */
     public void delete(ActionEvent event) {
         // TODO implement here
         return;
     }
 
-    /**
-     * @return
-     */
     public void init() {
         // TODO implement here
         return;
     }
 
-    /**
-     * @param replist 
-     * @return
-     */
+
     private void changeDisplayedReport(Report[] replist) {
         // TODO implement here
         return;
@@ -86,10 +66,6 @@ public class ReadReportController {
         return;
     }
 
-    /**
-     * @param event 
-     * @return
-     */
     public void displatMultiSearchResult(ActionEvent event) {
         // TODO implement here
         return;

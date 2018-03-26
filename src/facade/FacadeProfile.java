@@ -2,6 +2,9 @@ package facade;
 
 import java.util.*;
 
+import domain.Story;
+import domain.User;
+
 /**
  * 
  */
@@ -18,18 +21,18 @@ public class FacadeProfile extends AbstractFacade {
      * @param user User 
      * @return
      */
-    public void subscribe(void user User) {
+    public void subscribe(User user) {
         // TODO implement here
-        return null;
+        return;
     }
 
     /**
      * @param bio String 
      * @return
      */
-    public void editBio(void bio String) {
+    public void editBio(String bio) {
         // TODO implement here
-        return null;
+        return;
     }
 
     /**
@@ -47,10 +50,5 @@ public class FacadeProfile extends AbstractFacade {
         // TODO implement here
         return null;
     }
-
-    /**
-     * 
-     */
-    private abstract void AbstractFacade();
 
 }

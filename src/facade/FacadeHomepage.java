@@ -2,6 +2,9 @@ package facade;
 
 import java.util.*;
 
+import domain.Report;
+import domain.User;
+
 /**
  * 
  */
@@ -19,7 +22,7 @@ public class FacadeHomepage extends AbstractFacade {
      * @param username String 
      * @return
      */
-    public User searchUser(void username String) {
+    public User searchUser( String username ) {
         // TODO implement here
         return null;
     }
@@ -32,9 +35,5 @@ public class FacadeHomepage extends AbstractFacade {
         return null;
     }
 
-    /**
-     * 
-     */
-    private abstract void AbstractFacade();
 
 }

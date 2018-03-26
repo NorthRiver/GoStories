@@ -1,6 +1,8 @@
-package facades;
+package facade;
 
 import java.util.*;
+
+import domain.User;
 
 /**
  * 
@@ -17,12 +19,6 @@ public abstract class AbstractFacade {
      * 
      */
     private static User myUser;
-
-    /**
-     * 
-     */
-    private abstract void AbstractFacade();
-
     /**
      * @return
      */
@@ -31,9 +27,6 @@ public abstract class AbstractFacade {
         return null;
     }
 
-    /**
-     * @param user
-     */
     public static void setUser(User user) {
         // TODO implement here
     }

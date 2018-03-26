@@ -1,6 +1,9 @@
-package facades;
+package facade;
 
 import java.util.*;
+
+import DAO.UserDAO;
+import domain.User;
 
 /**
  * 
@@ -30,9 +33,5 @@ public class FacadeLogin extends AbstractFacade {
         return null;
     }
 
-    /**
-     * 
-     */
-    private abstract void AbstractFacade();
 
 }

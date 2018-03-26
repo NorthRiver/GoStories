@@ -25,7 +25,7 @@ public class PlayStoryView extends Scene{
      * 
      */
     public void init() {
-        // TODO implement here
+       
     }
 
 }

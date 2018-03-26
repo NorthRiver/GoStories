@@ -4,24 +4,26 @@ import java.util.*;
 
 import domain.User;
 
+<<<<<<< Updated upstream
 /**
  * 
  */
+=======
+
+>>>>>>> Stashed changes
 public class BanMenuView {
 
-    /**
-     * Default constructor
-     */
+
     public BanMenuView() {
     }
 
 
-    /**
-     * @param user 
-     * @return
-     */
     public void init(User user) {
+<<<<<<< Updated upstream
         // TODO implement here
+=======
+
+>>>>>>> Stashed changes
         return;
     }
 

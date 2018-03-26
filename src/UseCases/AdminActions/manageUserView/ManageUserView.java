@@ -19,9 +19,6 @@ public class ManageUserView extends Scene {
 	}
 
 
-    /**
-     * @return
-     */
     public void init() {
         // TODO implement here
         return;

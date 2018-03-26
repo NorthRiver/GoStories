@@ -18,13 +18,8 @@ public class ReadReportView extends Scene{
 		// TODO Auto-generated constructor stub
 	}
 
-
-
-    /**
-     * 
-     */
     public void init() {
-        // TODO implement here
+        
     }
 
 }

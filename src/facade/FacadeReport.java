@@ -1,6 +1,8 @@
-package facades;
+package facade;
 
 import java.util.*;
+
+import domain.Page;
 
 /**
  * 
@@ -21,9 +23,5 @@ public class FacadeReport extends AbstractFacade {
         // TODO implement here
     }
 
-    /**
-     * 
-     */
-    private abstract void AbstractFacade();
 
 }

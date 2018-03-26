@@ -1,4 +1,4 @@
-package facades;
+package facade;
 
 import java.util.*;
 
@@ -19,12 +19,8 @@ public class FacadeForgetPassword extends AbstractFacade {
      */
     public void sendMail(String mail) {
         // TODO implement here
-        return null;
+        return;
     }
 
-    /**
-     * 
-     */
-    private abstract void AbstractFacade();
 
 }

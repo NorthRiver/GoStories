@@ -1,6 +1,9 @@
-package facades;
+package facade;
 
 import java.util.*;
+
+import domain.Story;
+import domain.User;
 
 /**
  * 
@@ -32,9 +35,5 @@ public class FacadeManageStories extends AbstractFacade {
         return null;
     }
 
-    /**
-     * 
-     */
-    private abstract void AbstractFacade();
 
 }

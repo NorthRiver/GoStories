@@ -2,25 +2,17 @@ package UseCases.UserActions.profileView;
 
 import java.util.*;
 
-/**
- * 
- */
+import domain.User;
+
 public class ProfileView {
 
-    /**
-     * Default constructor
-     */
     public ProfileView() {
     }
 
 
-    /**
-     * @param user User 
-     * @return
-     */
-    public void init(void user User) {
-        // TODO implement here
-        return null;
+    public void init(User User) {
+      
+        return;
     }
 
 }

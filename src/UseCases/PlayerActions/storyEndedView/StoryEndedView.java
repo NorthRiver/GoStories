@@ -25,7 +25,7 @@ public class StoryEndedView extends Scene{
      * 
      */
     public void init() {
-        // TODO implement here
+      
     }
 
 }

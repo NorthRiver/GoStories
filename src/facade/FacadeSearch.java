@@ -2,6 +2,8 @@ package facade;
 
 import java.util.*;
 
+import domain.User;
+
 /**
  * 
  */
@@ -21,10 +23,4 @@ public class FacadeSearch extends AbstractFacade {
         // TODO implement here
         return null;
     }
-
-    /**
-     * 
-     */
-    private abstract void AbstractFacade();
-
 }
