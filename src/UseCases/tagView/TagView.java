@@ -2,6 +2,8 @@ package UseCases.tagView;
 
 import java.util.*;
 
+import domain.Story;
+
 /**
  * 
  */
@@ -19,8 +21,8 @@ public class TagView {
      * @return
      */
     public void init(Story story) {
-        // TODO implement here
-        return null;
+      
+        return;
     }
 
 }

@@ -2,49 +2,32 @@ package UseCases.tagView;
 
 import java.util.*;
 
-/**
- * 
- */
+import domain.Story;
+
+
 public class TagController {
 
-    /**
-     * Default constructor
-     */
+    
     public TagController() {
     }
 
-    /**
-     * 
-     */
+ 
     public Story currentStory;
 
-
-
-    /**
-     * @param story 
-     * @return
-     */
+   
     public void init(Story story) {
-        // TODO implement here
-        return null;
+        
+        return ;
     }
 
-    /**
-     * @param event 
-     * @return
-     */
-    public void validate(void event) {
-        // TODO implement here
-        return null;
+    public void validate(event) {
+       
+        return ;
     }
-
-    /**
-     * @param event 
-     * @return
-     */
-    public void cancel(void event) {
-        // TODO implement here
-        return null;
+   
+    public void cancel(event) {
+       
+        return ;
     }
 
 }
