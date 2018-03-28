@@ -1,4 +1,4 @@
-package javaFxUI;
+package JavaFxUI;
 
 import java.util.*;
 
