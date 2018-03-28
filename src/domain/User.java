@@ -32,6 +32,7 @@ public class User {
      * 
      */
     public Boolean isAdmn;
+    public Boolean isBanned;
 
 
 
@@ -87,6 +88,14 @@ public class User {
 
 	public void setIsAdmn(Boolean isAdmn) {
 		this.isAdmn = isAdmn;
+	}
+
+	public void setIsBanned(Boolean isBanned) {
+		this.isBanned = isBanned;
+	}
+
+	public Boolean getIsBanned() {
+		return isBanned;
 	}
 
 }

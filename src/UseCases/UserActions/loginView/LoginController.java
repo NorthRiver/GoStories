@@ -14,7 +14,7 @@ public class LoginController {
 	@FXML 
 	private TextField pswdText;
 	public void login(ActionEvent event) {
-		FacadeLogin facade = FacadeLogin.getFacadeLogin();
+		FacadeLogin facade = FacadeLogin.getFacade();
 		try {
 			User moi = facade.login(usernameText.getText(), pswdText.getText());
 			System.out.println(moi);

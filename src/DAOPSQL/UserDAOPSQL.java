@@ -90,5 +90,11 @@ public class UserDAOPSQL extends UserDAO {
 		return null;
 	}
 
+	@Override
+	public User[] getListOfEigthtUsers(int offset) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 }

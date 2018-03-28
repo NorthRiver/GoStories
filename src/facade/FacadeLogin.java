@@ -21,7 +21,7 @@ public class FacadeLogin extends AbstractFacade {
 		userDao = factoryDao.getUserDAO();
 	}
 	
-	public static FacadeLogin getFacadeLogin() {
+	public static FacadeLogin getFacade() {
 		if( facadeSingleton == null ) {
 			facadeSingleton = new FacadeLogin();	
 		}

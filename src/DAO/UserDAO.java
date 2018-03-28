@@ -26,4 +26,6 @@ public abstract class UserDAO {
 
     public  abstract User getAuthorByStory(Story story) ;
 
+	public abstract User[] getListOfEigthtUsers(int offset);
+
 }
