@@ -23,7 +23,7 @@ public class RenameView extends Scene{
 
     public RenameView(AnchorPane root, double width, double height) {
     	super(root, width, height);
-		URL url = getClass().getResource("LoginStructure.fxml");
+		URL url = getClass().getResource("RenameStructure.fxml");
 	    FXMLLoader fxmlLoader = new FXMLLoader(url);
 	    try {
 	    AnchorPane root2 = (AnchorPane) fxmlLoader.load();

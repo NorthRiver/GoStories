@@ -107,7 +107,7 @@ public class ViewManager extends Application {
     public static void gotToManageUser() {
     	mainStage.setTitle("Manage User");
     	AnchorPane root = new AnchorPane();
-		Scene scene = new ManageUserView(root,300, 300);
+		Scene scene = new ManageUserView(root,400, 600);
 		((ManageUserView)scene).init();
 		mainStage.setScene(scene);
         mainStage.show();
@@ -116,7 +116,7 @@ public class ViewManager extends Application {
     public static void goToRenameUser(User user) {
     	mainStage.setTitle("Rename User");
     	AnchorPane root = new AnchorPane();
-		Scene scene = new RenameView(root,300, 300);
+		Scene scene = new RenameView(root,400, 600);
 		((RenameView)scene).init(user);
 		mainStage.setScene(scene);
         mainStage.show();
@@ -125,7 +125,7 @@ public class ViewManager extends Application {
     public static void goToBanUser(User user) {
     	mainStage.setTitle("Ban User");
     	AnchorPane root = new AnchorPane();
-		Scene scene = new BanMenuView(root,300, 300);
+		Scene scene = new BanMenuView(root,400, 600);
 		((BanMenuView)scene).init(user);
 		mainStage.setScene(scene);
         mainStage.show();
