@@ -3,7 +3,9 @@ package javaFxUI;
 import java.util.*;
 
 import DAO.FactoryDAO;
+import UseCases.AdminActions.banMenuView.BanMenuView;
 import UseCases.AdminActions.manageUserView.ManageUserView;
+import UseCases.AdminActions.renameView.RenameView;
 import UseCases.PlayerActions.reportView.ReportView;
 import UseCases.UserActions.forgotPasswordView.ForgotPasswordView;
 import UseCases.UserActions.loginView.LoginView;
@@ -111,7 +113,24 @@ public class ViewManager extends Application {
         mainStage.show();
         return;
     }
-
+    public static void goToRenameUser(User user) {
+    	mainStage.setTitle("Rename User");
+    	AnchorPane root = new AnchorPane();
+		Scene scene = new RenameView(root,300, 300);
+		((RenameView)scene).init(user);
+		mainStage.setScene(scene);
+        mainStage.show();
+        return;
+    }
+    public static void goToBanUser(User user) {
+    	mainStage.setTitle("Ban User");
+    	AnchorPane root = new AnchorPane();
+		Scene scene = new BanMenuView(root,300, 300);
+		((BanMenuView)scene).init(user);
+		mainStage.setScene(scene);
+        mainStage.show();
+        return;
+    }
     /**
      * @param page 
      * @param story
