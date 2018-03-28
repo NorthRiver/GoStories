@@ -10,19 +10,9 @@ import domain.User;
  */
 public abstract class UserDAO {
 
-    /**
-     * Default constructor
-     */
-    public UserDAO() {
-    }
-
-    /**
-     * @param  username 
-     * @return
-     */
     public abstract void findUserByUsername(String  username);
    
-    public abstract User connectToUser(String username, String password);
+    public abstract User connectToUser(String username, String password) throws Exception;
 
     public abstract void disableUser(User user);
 

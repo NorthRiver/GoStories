@@ -1,6 +1,9 @@
 package DAOPSQL;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.*;
 
 import DAO.UserDAO;
@@ -12,11 +15,10 @@ import domain.User;
  */
 public class UserDAOPSQL extends UserDAO {
 
-    /**
-     * Default constructor
-     * @param connectionPSQL 
-     */
+	Connection connectionPSQL;
+	
     public UserDAOPSQL(Connection connectionPSQL) {
+    	this.connectionPSQL = connectionPSQL;
     }
 
 	@Override
@@ -25,10 +27,31 @@ public class UserDAOPSQL extends UserDAO {
 		
 	}
 
-	@Override
-	public User connectToUser(String username, String password) {
-		// TODO Auto-generated method stub
-		return null;
+	public User connectToUser(String username, String password) throws Exception {
+		User loggedUser = new User();
+		try {
+			PreparedStatement st = connectionPSQL.prepareStatement("SELECT * FROM users WHERE name = ? AND password = ?");
+			st.setString(1, username);
+			st.setString(2, password);
+			//ResultSet rs = st.executeQuery("SELECT * FROM users");
+			ResultSet rs = st.executeQuery();
+			if( !rs.next() ) {
+				rs.close();
+				st.close();				
+				throw new Exception("Username and password doesn't match.");
+			} else {
+				loggedUser.setUsername(rs.getString("name"));
+				loggedUser.setEmail(rs.getString("email"));
+				rs.close();
+				st.close();				
+			}
+    		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+    			e.printStackTrace();
+		}
+        
+		
+		return loggedUser;
 	}
 
 	@Override
