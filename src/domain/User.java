@@ -13,24 +13,10 @@ public class User {
     public User() {
     }
 
-    /**
-     * 
-     */
     public String username;
-
-    /**
-     * 
-     */
     public String email;
-
-    /**
-     * 
-     */
+    public Date birthDate;
     public String password;
-
-    /**
-     * 
-     */
     public Boolean isAdmn;
     public Boolean isBanned;
 
@@ -96,6 +82,14 @@ public class User {
 
 	public Boolean getIsBanned() {
 		return isBanned;
+	}
+
+	public Date getBirthDate() {
+		return birthDate;
+	}
+
+	public void setBirthDate(Date birthDate) {
+		this.birthDate = birthDate;
 	}
 
 }

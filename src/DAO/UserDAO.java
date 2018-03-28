@@ -28,4 +28,6 @@ public abstract class UserDAO {
 
 	public abstract User[] getListOfEigthtUsers(int offset);
 
+	public abstract User[] getListUserByName(String text, int offset);
+
 }

@@ -63,6 +63,7 @@ public class UserDAOPSQL extends UserDAO {
 	@Override
 	public void saveUser(User user) {
 		// TODO Auto-generated method stub
+		//IF isBanned = false et que dans la base egale vrai, debannir
 		
 	}
 
@@ -92,6 +93,32 @@ public class UserDAOPSQL extends UserDAO {
 
 	@Override
 	public User[] getListOfEigthtUsers(int offset) {
+		User userList[] = new User[8];
+		try {
+			PreparedStatement st = connectionPSQL.prepareStatement("SELECT * FROM users LIMIT 8 OFFSET ?");
+			st.setInt(1, offset);
+			ResultSet rs = st.executeQuery();
+			int i =0;
+			while( !rs.next() && i<8 ) {
+				User user = new User();
+				user.setUsername(rs.getString("name"));
+				//TODO Recuperer
+				user.setIsBanned(false);
+				userList[i] = user;
+				i++;
+				
+			}
+				rs.close();
+				st.close();				
+    		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+    			e.printStackTrace();
+		}
+		return userList;
+	}
+
+	@Override
+	public User[] getListUserByName(String text, int offset) {
 		// TODO Auto-generated method stub
 		return null;
 	}

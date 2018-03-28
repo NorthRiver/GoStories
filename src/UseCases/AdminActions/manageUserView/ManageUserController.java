@@ -55,8 +55,28 @@ public class ManageUserController {
 
 
     public void displaySearchResult(ActionEvent event) {
-        // TODO implement here
-        return;
+    	FacadeManageUser facade = FacadeManageUser.getFacade();
+    	userList = facade.getUserListByName(usernameField.getText(),0);
+    	int i;
+    	if(userList.length<8) {
+    		i = userList.length;
+    	}
+    	else {
+    		i = 8;
+    	}
+    	
+    	Text[] users = {user1,user2,user3,user4,user5,user6,user7,user8};
+    	Button[] bans = {banButton1,banButton2,banButton3,banButton4,banButton5,banButton6,banButton7,banButton8};
+    	for(int j = 0; j<i;j++) {
+    		users[j].setText(userList[j].getUsername());
+    		if(userList[j].getIsBanned()) {
+    			bans[j].setText("Un-ban");
+    		}
+    	}
+    	for(int k = i-1; k<8;k++) {
+    		users[k].setVisible(false);
+    		bans[k].setVisible(false);
+    	}
     }
 
     
@@ -105,7 +125,8 @@ public class ManageUserController {
     public void switchBanButton1(ActionEvent event) {
     	User user = userList[0];
     	if(user.getIsBanned()){
-    		//Todo Unban
+    		FacadeManageUser facade = FacadeManageUser.getFacade();
+    		facade.unBanUser(user);
     	}
     	else {
     		ViewManager.goToBanUser(user);
@@ -113,38 +134,73 @@ public class ManageUserController {
     }
     public void switchBanButton2(ActionEvent event) {
     	User user = userList[1];
-    	ViewManager.goToBanUser(user);
-        return;
+    	if(user.getIsBanned()){
+    		FacadeManageUser facade = FacadeManageUser.getFacade();
+    		facade.unBanUser(user);
+    	}
+    	else {
+    		ViewManager.goToBanUser(user);
+        }
     }
     public void switchBanButton3(ActionEvent event) {
     	User user = userList[2];
-    	ViewManager.goToBanUser(user);
-        return;
+    	if(user.getIsBanned()){
+    		FacadeManageUser facade = FacadeManageUser.getFacade();
+    		facade.unBanUser(user);
+    	}
+    	else {
+    		ViewManager.goToBanUser(user);
+        }
     }
     public void switchBanButton4(ActionEvent event) {
     	User user = userList[3];
-    	ViewManager.goToBanUser(user);
-        return;
+    	if(user.getIsBanned()){
+    		FacadeManageUser facade = FacadeManageUser.getFacade();
+    		facade.unBanUser(user);
+    	}
+    	else {
+    		ViewManager.goToBanUser(user);
+        }
     }
     public void switchBanButton5(ActionEvent event) {
     	User user = userList[4];
-    	ViewManager.goToBanUser(user);
-        return;
+    	if(user.getIsBanned()){
+    		FacadeManageUser facade = FacadeManageUser.getFacade();
+    		facade.unBanUser(user);
+    	}
+    	else {
+    		ViewManager.goToBanUser(user);
+        }
     }
     public void switchBanButton6(ActionEvent event) {
     	User user = userList[5];
-    	ViewManager.goToBanUser(user);
-        return;
+    	if(user.getIsBanned()){
+    		FacadeManageUser facade = FacadeManageUser.getFacade();
+    		facade.unBanUser(user);
+    	}
+    	else {
+    		ViewManager.goToBanUser(user);
+        }
     }
     public void switchBanButton7(ActionEvent event) {
     	User user = userList[6];
-    	ViewManager.goToBanUser(user);
-        return;
+    	if(user.getIsBanned()){
+    		FacadeManageUser facade = FacadeManageUser.getFacade();
+    		facade.unBanUser(user);
+    	}
+    	else {
+    		ViewManager.goToBanUser(user);
+        }
     }
     public void switchBanButton8(ActionEvent event) {
     	User user = userList[7];
-    	ViewManager.goToBanUser(user);
-        return;
+    	if(user.getIsBanned()){
+    		FacadeManageUser facade = FacadeManageUser.getFacade();
+    		facade.unBanUser(user);
+    	}
+    	else {
+    		ViewManager.goToBanUser(user);
+        }
     }
 
 

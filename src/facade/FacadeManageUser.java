@@ -30,8 +30,7 @@ public class FacadeManageUser extends AbstractFacade {
 	
 
     public User[] getUserList(int offset) {
-        // TODO implement here
-        return null;
+        return userDao.getListOfEigthtUsers(offset);
     }
 
 
@@ -39,6 +38,10 @@ public class FacadeManageUser extends AbstractFacade {
 		user.setIsBanned(false);
 		userDao.saveUser(user);
 		
+	}
+
+	public User[] getUserListByName(String text, int offset) {
+		return userDao.getListUserByName(text,offset);
 	}
 
 }
