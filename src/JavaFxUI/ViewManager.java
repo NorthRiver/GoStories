@@ -3,7 +3,11 @@ package javaFxUI;
 import java.util.*;
 
 import DAO.FactoryDAO;
+import UseCases.AdminActions.manageUserView.ManageUserView;
+import UseCases.PlayerActions.reportView.ReportView;
+import UseCases.UserActions.forgotPasswordView.ForgotPasswordView;
 import UseCases.UserActions.loginView.LoginView;
+import UseCases.UserActions.registerView.RegisterView;
 import domain.Page;
 import domain.Story;
 import domain.User;
@@ -16,7 +20,8 @@ import javafx.stage.Stage;
  * 
  */
 public class ViewManager extends Application {
-
+	private static Stage mainStage;
+	
 	public static void main(String[] args) {
 		FactoryDAO.create("PSQL");
         Application.launch(ViewManager.class, args);
@@ -25,29 +30,31 @@ public class ViewManager extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		// TODO Auto-generated method stub
-		primaryStage.setTitle("Login");
-		
-		AnchorPane root = new AnchorPane();
-		Scene scene = new LoginView(root,300, 300);
-		primaryStage.setScene(scene);
-        primaryStage.show();
-		
+		mainStage = primaryStage;
+		goToLogin();
 	}
 
     /**
      * @return
      */
     public static void goToLogin() {
-        // TODO implement here
+    	mainStage.setTitle("Login");
+    	AnchorPane root = new AnchorPane();
+		Scene scene = new LoginView(root,300, 300);
+		mainStage.setScene(scene);
+        mainStage.show();
         return;
     }
 
     /**
      * @return
      */
-    public static void goToForgetPassword() {
-        // TODO implement here
+    public static void goToForgotPassword() {
+    	mainStage.setTitle("Forgot Password");
+    	AnchorPane root = new AnchorPane();
+		Scene scene = new ForgotPasswordView(root,300, 300);
+		mainStage.setScene(scene);
+        mainStage.show();
         return;
     }
 
@@ -55,7 +62,11 @@ public class ViewManager extends Application {
      * @return
      */
     public static void gotToRegister() {
-        // TODO implement here
+    	mainStage.setTitle("Register");
+    	AnchorPane root = new AnchorPane();
+		Scene scene = new RegisterView(root,300, 300);
+		mainStage.setScene(scene);
+        mainStage.show();
         return;
     }
 
@@ -63,7 +74,13 @@ public class ViewManager extends Application {
      * @param page
      */
     public static void goToReport(Page page) {
-        // TODO implement here
+    	mainStage.setTitle("Report");
+    	AnchorPane root = new AnchorPane();
+		Scene scene = new ReportView(root,300, 300);
+		((ReportView)scene).init(page);
+		mainStage.setScene(scene);
+        mainStage.show();
+        return;
     }
 
     /**
@@ -86,7 +103,12 @@ public class ViewManager extends Application {
      * @return
      */
     public static void gotToManageUser() {
-        // TODO implement here
+    	mainStage.setTitle("Manage User");
+    	AnchorPane root = new AnchorPane();
+		Scene scene = new ManageUserView(root,300, 300);
+		((ManageUserView)scene).init();
+		mainStage.setScene(scene);
+        mainStage.show();
         return;
     }
 
