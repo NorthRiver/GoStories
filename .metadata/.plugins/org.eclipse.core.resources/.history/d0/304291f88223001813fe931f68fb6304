@@ -1,8 +1,0 @@
-
-public class UserDAOFactory extends DAOFactory
-{
-    public static UserDAO getUserDAOPLSQL(String type)
-    { 
-    	return new UserDAOPLSQL();
-    }
-}
