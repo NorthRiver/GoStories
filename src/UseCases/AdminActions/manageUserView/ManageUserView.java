@@ -17,7 +17,7 @@ public class ManageUserView extends Scene {
     
     public ManageUserView(AnchorPane root, double width, double height) {
     	super(root, width, height);
-		URL url = getClass().getResource("ManageUserStructure.fxml");
+		URL url = getClass().getResource("UseCasesAdminActions.manageUserView.ManageUserStructure.fxml");
 	    FXMLLoader fxmlLoader = new FXMLLoader(url);
 	    try {
 	    AnchorPane root2 = (AnchorPane) fxmlLoader.load();

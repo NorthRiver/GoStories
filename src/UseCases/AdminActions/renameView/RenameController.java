@@ -3,7 +3,9 @@ package UseCases.AdminActions.renameView;
 import java.util.*;
 
 import domain.User;
+import javaFxUI.ViewManager;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
 /**
@@ -12,16 +14,15 @@ import javafx.scene.control.TextField;
 public class RenameController {
 
 
-    public RenameController() {
-    }
-
     public User currentUser;
-
+    
+    @FXML
     public TextField newName;
 
 
     public void init(User user) {
-        // TODO implement here
+        currentUser = user;
+        newName.setText(currentUser.username);
         return;
     }
 
@@ -33,7 +34,7 @@ public class RenameController {
 
 
     public void cancel(ActionEvent event) {
-        // TODO implement here
+    	ViewManager.gotToManageUser();
         return;
     }
 
