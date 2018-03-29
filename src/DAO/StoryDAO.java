@@ -16,7 +16,7 @@ public abstract class StoryDAO {
     }
 
 
-    public abstract Story getStoryByName(String storyName);
+    public abstract Story getStoryByName(String storyName) throws Exception;
 
     public abstract Set<Story> getStoryByUser(User author);
 

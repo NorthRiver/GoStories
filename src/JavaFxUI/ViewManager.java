@@ -7,6 +7,7 @@ import UseCases.AdminActions.banMenuView.BanMenuView;
 import UseCases.AdminActions.manageUserView.ManageUserView;
 import UseCases.AdminActions.renameView.RenameView;
 import UseCases.PlayerActions.reportView.ReportView;
+import UseCases.PlayerActions.storyInfoView.StoryInfoView;
 import UseCases.UserActions.forgotPasswordView.ForgotPasswordView;
 import UseCases.UserActions.loginView.LoginView;
 import UseCases.UserActions.profileView.ProfileView;
@@ -34,7 +35,13 @@ public class ViewManager extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		mainStage = primaryStage;
-		goToLogin();
+//		goToLogin();
+		
+		// TESTING ZONE
+		// data fetch
+//		Story story = FactoryDAO.getFactory().getStoryDAO().getStoryByName("demoStory");
+		// view loading
+//		goToStoryInfo(story);
 	}
 
     /**
@@ -166,7 +173,13 @@ public class ViewManager extends Application {
      * @param story
      */
     public static void goToStoryInfo(Story story) {
-        // TODO implement here
+    	mainStage.setTitle(story.title);
+    	AnchorPane root = new AnchorPane();
+		Scene scene = new StoryInfoView(root, 600.0, 400.0);
+		((StoryInfoView)scene).init(story);
+		mainStage.setScene(scene);
+        mainStage.show();
+        return;
     }
 
     /**

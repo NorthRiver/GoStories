@@ -26,8 +26,13 @@ public class Story {
     /**
      * 
      */
-    public String name;
-
+    public String title;
+    
+    /**
+    *
+    */
+	public String authorName;
+	
     /**
      * 
      */
@@ -47,6 +52,12 @@ public class Story {
      * 
      */
     public Boolean published;
+    
+    /**
+     *
+     */
+	public String sumUp;
+
 
 
 

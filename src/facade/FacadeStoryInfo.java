@@ -2,6 +2,8 @@ package facade;
 
 import java.util.*;
 
+import DAO.FactoryDAO;
+import DAO.UserDAO;
 import domain.Story;
 import domain.User;
 
@@ -10,12 +12,19 @@ import domain.User;
  */
 public class FacadeStoryInfo extends AbstractFacade {
 
-    /**
-     * Default constructor
-     */
-    public FacadeStoryInfo() {
+	private static FacadeStoryInfo singletonFacade;
+	private UserDAO userDao;
+	
+    private FacadeStoryInfo() {
+    	this.userDao = FactoryDAO.getFactory().getUserDAO();
     }
-
+    
+	public static FacadeStoryInfo getFacade() {
+		if (singletonFacade == null ) {
+			singletonFacade = new FacadeStoryInfo();
+		}
+		return singletonFacade;
+	}
 
 
     /**
@@ -30,9 +39,13 @@ public class FacadeStoryInfo extends AbstractFacade {
      * @param story 
      * @return
      */
-    public User getAuthor(Story story) {
-        // TODO implement here
+    public User getAuthor(String username) {
+        try {
+			return userDao.findUserByUsername(username);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         return null;
     }
-
 }

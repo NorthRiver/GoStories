@@ -21,16 +21,41 @@ public class UserDAOPSQL extends UserDAO {
     	this.connectionPSQL = connectionPSQL;
     }
 
+    protected User queryToUser(User user, ResultSet rs) throws SQLException {
+    	user.setBirthDate(rs.getDate("birthdate"));
+    	user.setEmail(rs.getString("email"));
+    	user.setIsAdmn(rs.getBoolean("isAdmin"));
+    	user.setUsername("username");
+    	return user;
+    }
+    
 	@Override
-	public void findUserByUsername(String username) {
-		// TODO Auto-generated method stub
-		
+	public User findUserByUsername(String username) throws Exception {
+		User foundUser = new User();
+		try {
+			PreparedStatement st = connectionPSQL.prepareStatement("SELECT * FROM users WHERE username = ?");
+			st.setString(1, username);
+			ResultSet rs = st.executeQuery();
+			if( !rs.next() ) {
+				rs.close();
+				st.close();				
+				throw new Exception("Username and password doesn't match.");
+			} else {
+				foundUser = queryToUser(foundUser, rs);
+				rs.close();
+				st.close();				
+			}
+    		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+    			e.printStackTrace();
+		}
+		return foundUser;
 	}
 
 	public User connectToUser(String username, String password) throws Exception {
 		User loggedUser = new User();
 		try {
-			PreparedStatement st = connectionPSQL.prepareStatement("SELECT * FROM users WHERE name = ? AND password = ?");
+			PreparedStatement st = connectionPSQL.prepareStatement("SELECT * FROM users WHERE username = ? AND password = ?");
 			st.setString(1, username);
 			st.setString(2, password);
 			//ResultSet rs = st.executeQuery("SELECT * FROM users");

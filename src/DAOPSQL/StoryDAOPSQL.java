@@ -1,5 +1,9 @@
 package DAOPSQL;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.*;
 
 import DAO.StoryDAO;
@@ -14,16 +18,70 @@ import domain.User;
  */
 public class StoryDAOPSQL extends StoryDAO {
 
-    /**
+    private Connection connectionPSQL;
+
+	/**
      * Default constructor
      */
-    public StoryDAOPSQL() {
+    public StoryDAOPSQL(Connection connectionPSQL) {
+    	this.connectionPSQL = connectionPSQL;
     }
+    
+    /**
+     * Assign each parameters of a request to story fields.
+     * @param story
+     * @param result
+     * @return story
+     * @throws SQLException
+     */
 
+    protected Story queryToStory(Story story, ResultSet result) throws SQLException {
+    	// Linked Attributes
+//    	story.ratings = result.;
+//    	story.comments = result.;
+//    	story.pageCount = result.;
+//    	story.category = result.getString("category");
+    	
+        // Atomic Attributes
+        story.title = result.getString("title");
+        story.authorName = result.getString("author");
+        story.price = result.getDouble("price");
+        story.published = result.getBoolean("published");
+        story.sumUp = result.getString("sumUp");
+    	return story;
+    }
+    
+
+//	protected String storyToQueryString(Story story) {
+//	String queryString = "("
+//			+ story.title + ","
+//			+ ")";
+//	
+//	return queryString;
+//}
+    
 	@Override
-	public Story getStoryByName(String storyName) {
-		// TODO Auto-generated method stub
-		return null;
+	public Story getStoryByName(String storyName) throws Exception {
+		Story story = new Story();
+		try {
+			PreparedStatement st = connectionPSQL.prepareStatement("SELECT * FROM stories WHERE title = ?");
+			st.setString(1, storyName);
+			ResultSet rs = st.executeQuery();
+			// Does the response exists
+			if( !rs.next() ) {
+				rs.close();
+				st.close();				
+				throw new Exception("No Story Found for that name");
+			} else {
+				story = queryToStory(story, rs);
+				rs.close();
+				st.close();				
+			}
+    		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+    			e.printStackTrace();
+		}
+		return story;
 	}
 
 	@Override

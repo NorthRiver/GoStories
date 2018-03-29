@@ -40,8 +40,7 @@ public class FactoryDAOPSQL extends FactoryDAO {
 	}
 	@Override
 	public StoryDAO getStoryDAO() {
-		// TODO Auto-generated method stub
-		return null;
+		return new StoryDAOPSQL(connectionPSQL);
 	}
 	@Override
 	public PageDAO getPageDAO() {

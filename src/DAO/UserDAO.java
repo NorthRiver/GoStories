@@ -10,7 +10,7 @@ import domain.User;
  */
 public abstract class UserDAO {
 
-    public abstract void findUserByUsername(String  username);
+    public abstract User findUserByUsername(String  username) throws Exception;
    
     public abstract User connectToUser(String username, String password) throws Exception;
 
