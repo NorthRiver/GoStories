@@ -76,7 +76,7 @@ public class UserDAOPSQL extends UserDAO {
 	@Override
 	public ArrayList<String> getSubscribedUser(User subscriber) {
 		try {
-			PreparedStatement st = connectionPSQL.prepareStatement("SELECT * FROM users, subscribed WHERE subscribedtoname = ? AND subscribername = users.name");
+			PreparedStatement st = connectionPSQL.prepareStatement("SELECT name FROM users, subscribed WHERE subscribedtoname = ? AND subscribername = users.name");
 			st.setString(1, subscriber.username);
 			ResultSet rs = st.executeQuery();
 			ArrayList<String> names = null;

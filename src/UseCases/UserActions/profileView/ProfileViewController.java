@@ -23,7 +23,8 @@ public class ProfileViewController {
 	private Label storiesLabel;	
 	@FXML 
 	private Button subscribeButton;	
-	
+	@FXML 
+	private Button editButton;	
 	@FXML 
 	private TextField chBio;	
 	
@@ -65,6 +66,12 @@ public class ProfileViewController {
     	userLabel.setText(currentUser.username);
     	emailLabel.setText(currentUser.email);
     	descLabel.setText(currentUser.bio);
+    	if (currentUser.equals(AbstractFacade.getUser()) || AbstractFacade.getUser().isAdmn) {
+    		subscribeButton.setVisible(false);
+    	}
+    	else {
+    		editButton.setVisible(false);
+    	}
     	FacadeProfile facade = FacadeProfile.getFacade();
 		if (facade.isUserSubscribed(currentUser, AbstractFacade.getUser())) {
     		subscribeButton.setText("Unsubscribe");

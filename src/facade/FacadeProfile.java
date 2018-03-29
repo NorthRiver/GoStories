@@ -61,7 +61,7 @@ public class FacadeProfile extends AbstractFacade {
     /**
      * @return
      */
-    public Set<String> getSubscriptions(User user) {
+    public ArrayList<String> getSubscriptions(User user) {
         
         return userDao.getSubscribedUser(user);
     }
