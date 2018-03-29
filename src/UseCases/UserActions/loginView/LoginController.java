@@ -2,27 +2,31 @@ package UseCases.UserActions.loginView;
 
 import java.util.*;
 
+import JavaFxUI.ViewManager;
 import domain.User;
 import facade.AbstractFacade;
 import facade.FacadeLogin;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 public class LoginController {
 	@FXML 
 	private TextField usernameText;
 	@FXML 
 	private TextField pswdText;
+	@FXML
+	private Label alertLabel;
+	
+	
 	public void login(ActionEvent event) {
 		FacadeLogin facade = FacadeLogin.getFacade();
 		try {
 			User moi = facade.login(usernameText.getText(), pswdText.getText());
-			System.out.println(moi);
 			AbstractFacade.setUser(moi);
+			ViewManager.goToHome();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			System.out.println(e);
+			alertLabel.setText(e.getMessage());
 		}
 	}
 }

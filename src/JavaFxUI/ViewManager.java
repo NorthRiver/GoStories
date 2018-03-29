@@ -9,12 +9,14 @@ import UseCases.AdminActions.renameView.RenameView;
 import UseCases.PlayerActions.reportView.ReportView;
 import UseCases.PlayerActions.storyInfoView.StoryInfoView;
 import UseCases.UserActions.forgotPasswordView.ForgotPasswordView;
+import UseCases.UserActions.homePageView.HomepageView;
 import UseCases.UserActions.loginView.LoginView;
 import UseCases.UserActions.profileView.ProfileView;
 import UseCases.UserActions.registerView.RegisterView;
 import domain.Page;
 import domain.Story;
 import domain.User;
+import facade.AbstractFacade;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -35,13 +37,20 @@ public class ViewManager extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		mainStage = primaryStage;
-//		goToLogin();
+		goToLogin();
 		
-		// TESTING ZONE
-		// data fetch
+		/******************** TESTING ZONES ********************/
+		/******************** Data Fetching ********************/
 //		Story story = FactoryDAO.getFactory().getStoryDAO().getStoryByName("demoStory");
-		// view loading
+//		User user = FactoryDAO.getFactory().getUserDAO().findUserByUsername("demoUser");
+//		User author = FactoryDAO.getFactory().getUserDAO().findUserByUsername("demoAuthor");
+//		User admin = FactoryDAO.getFactory().getUserDAO().findUserByUsername("demoAdmin");
+//		AbstractFacade.setUser(admin);
+		
+		
+		/******************** view loading ********************/
 //		goToStoryInfo(story);
+//		goToHome();
 	}
 
     /**
@@ -151,7 +160,13 @@ public class ViewManager extends Application {
      * 
      */
     public static void goToHome() {
-        // TODO implement here
+    	mainStage.setTitle("Welcome");
+    	AnchorPane root = new AnchorPane();
+		Scene scene = new HomepageView(root,600, 400);
+		((HomepageView)scene).init();
+		mainStage.setScene(scene);
+        mainStage.show();
+        return;
     }
 
     /**
@@ -186,7 +201,6 @@ public class ViewManager extends Application {
      * @param user
      */
     public static void goToUserProfile(User user) {
-        // TODO implement here
     	mainStage.setTitle("User Profile");
     	AnchorPane root = new AnchorPane();
 		Scene scene = new LoginView(root,400, 600);
