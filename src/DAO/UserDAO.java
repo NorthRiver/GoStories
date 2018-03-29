@@ -30,4 +30,7 @@ public abstract class UserDAO {
 
 	public abstract User[] getListUserByName(String text, int offset);
 
+	public abstract Boolean isUserSubscribed(User subscribedTo, User subscriber);
+	
+	public abstract void cancelSubscription(User subscribedTo, User subscriber);
 }

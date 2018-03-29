@@ -37,8 +37,13 @@ public class FacadeProfile extends AbstractFacade {
      * @param user User 
      * @return
      */
-    public void subscribe(User user) {
-        // TODO implement here
+    public void subscribe(User userSubscribed, User userSubscriber) {
+		if (userDao.isUserSubscribed(userSubscribed, userSubscriber)) {
+			userDao.cancelSubscription(userSubscribed, userSubscriber);
+		}
+		else {
+			userDao.subscribeToAuthor(userSubscriber, userSubscribed);
+		}
         return;
     }
 
@@ -56,11 +61,14 @@ public class FacadeProfile extends AbstractFacade {
     /**
      * @return
      */
-    public Set<String> getSubscriptions() {
-        // TODO implement here
-        return null;
+    public Set<String> getSubscriptions(User user) {
+        
+        return userDao.getSubscribedUser(user);
     }
 
+    public Boolean isUserSubscribed(User subscribed, User subscriber) {
+    	return userDao.isUserSubscribed(subscribed, subscriber);    	
+    }
     /**
      * @return
      */

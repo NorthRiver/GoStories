@@ -135,5 +135,17 @@ public class UserDAOPSQL extends UserDAO {
 		return null;
 	}
 
+	@Override
+	public Boolean isUserSubscribed(User subscribedTo, User subscriber) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void cancelSubscription(User subscribedTo, User subscriber) {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 }

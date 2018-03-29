@@ -1,4 +1,4 @@
-package javaFxUI;
+package JavaFxUI;
 
 import java.util.*;
 
@@ -177,7 +177,7 @@ public class ViewManager extends Application {
     	mainStage.setTitle("User Profile");
     	AnchorPane root = new AnchorPane();
 		Scene scene = new LoginView(root,400, 600);
-		((ManageUserView)scene).init();
+		((ProfileView)scene).init(user);
 		mainStage.setScene(scene);
         mainStage.show();
         return;

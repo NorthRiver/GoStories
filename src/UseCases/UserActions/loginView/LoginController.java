@@ -3,6 +3,7 @@ package UseCases.UserActions.loginView;
 import java.util.*;
 
 import domain.User;
+import facade.AbstractFacade;
 import facade.FacadeLogin;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,6 +19,7 @@ public class LoginController {
 		try {
 			User moi = facade.login(usernameText.getText(), pswdText.getText());
 			System.out.println(moi);
+			AbstractFacade.setUser(moi);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println(e);
