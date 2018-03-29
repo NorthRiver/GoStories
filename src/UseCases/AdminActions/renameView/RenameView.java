@@ -25,7 +25,7 @@ public class RenameView extends Scene{
 	
     public RenameView(AnchorPane root, double width, double height) {
     	super(root, width, height);
-		URL url = getClass().getResource("UseCasesAdminActions.manageUserView.ManageUserStructure.fxml");
+		URL url = getClass().getResource("UseCasesAdminActions.renameView.RenameStructure.fxml");
 	    FXMLLoader fxmlLoader = new FXMLLoader(url);
 	    try {
 	    AnchorPane root2 = (AnchorPane) fxmlLoader.load();

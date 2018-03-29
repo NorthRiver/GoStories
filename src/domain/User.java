@@ -20,6 +20,7 @@ public class User {
     public Boolean isAdmn;
     public Boolean isBanned;
     public String bio;
+    public Date banUntilDate;
 
 
 
@@ -97,6 +98,14 @@ public class User {
 
 	public void setBirthDate(Date birthDate) {
 		this.birthDate = birthDate;
+	}
+
+	public Date getBanUntilDate() {
+		return banUntilDate;
+	}
+
+	public void setBanUntilDate(Date banUntilDate) {
+		this.banUntilDate = banUntilDate;
 	}
 
 }
