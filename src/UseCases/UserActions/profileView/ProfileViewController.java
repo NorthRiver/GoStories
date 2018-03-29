@@ -19,10 +19,21 @@ public class ProfileViewController {
 	@FXML 
 	private Label storiesLabel;	
 	
-   
+	@FXML 
+	private TextField chBio;	
+	
+	public User currentUser;
 
     public void editBio(ActionEvent event) {
-  
+    	descLabel.setText(chBio.getText());
+    	FacadeProfile facade = FacadeProfile.getFacade();
+    	try {
+    		facade.editBio(descLabel.getText(), currentUser);
+    	} catch (Exception e) 
+    	{
+    		// TODO Auto-generated catch block
+    		System.out.println(e);
+    	}
     }
 
     public void subscribe(ActionEvent event) {

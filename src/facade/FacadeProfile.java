@@ -46,8 +46,10 @@ public class FacadeProfile extends AbstractFacade {
      * @param bio String 
      * @return
      */
-    public void editBio(String bio) {
+    public void editBio(String bio, User userToChange) {
         // TODO implement here
+    	userToChange.setBio(bio);
+    	userDao.saveUser(userToChange);
         return;
     }
 

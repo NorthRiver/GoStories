@@ -19,7 +19,7 @@ public class User {
     public String password;
     public Boolean isAdmn;
     public Boolean isBanned;
-
+    public String bio;
 
 
 
@@ -68,6 +68,13 @@ public class User {
 		this.password = password;
 	}
 
+	public String getBio() {
+		return bio;
+	}
+
+	public void setBio(String bio) {
+		this.bio = bio;
+	}
 	public Boolean getIsAdmn() {
 		return isAdmn;
 	}

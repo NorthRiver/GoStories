@@ -75,6 +75,13 @@ public class UserDAOPSQL extends UserDAO {
 
 	@Override
 	public Set<User> getSubscribedUser(User subscriber) {
+		try {
+			PreparedStatement st = connectionPSQL.prepareStatement("SELECT subscribername FROM subscribed WHERE subscribedtoname = ?");
+			st.setString(1, subscriber.username);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		// TODO Auto-generated method stub
 		return null;
 	}
