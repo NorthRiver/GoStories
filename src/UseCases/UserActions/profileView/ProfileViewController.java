@@ -20,12 +20,6 @@ public class ProfileViewController {
 	private Label storiesLabel;	
 	
    
-    	
-
-    public void Subscribe(ActionEvent event) {
-
-    }
-    
 
     public void editBio(ActionEvent event) {
   
