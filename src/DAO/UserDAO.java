@@ -20,7 +20,7 @@ public abstract class UserDAO {
 
     public abstract void subscribeToAuthor(User subscriber, User author);
 
-    public abstract  Set<User> getSubscribedUser(User subscriber) ;
+    public abstract ArrayList<String> getSubscribedUser(User subscriber) ;
 
     public abstract Set<User> getAllUser(String username) ;
 
