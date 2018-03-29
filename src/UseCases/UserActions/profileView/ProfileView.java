@@ -12,7 +12,7 @@ import javafx.scene.layout.AnchorPane;
 
 public class ProfileView extends Scene {
 
-
+	User pageUser;
 
 
     public ProfileView(AnchorPane root, double width, double height) {
@@ -29,8 +29,8 @@ public class ProfileView extends Scene {
 	    }
 	}
 
-	public void init(User User) {
-      
+	public void init(User user) {
+		pageUser = user;
         return;
     }
 

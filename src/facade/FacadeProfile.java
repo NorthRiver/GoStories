@@ -29,7 +29,7 @@ public class FacadeProfile extends AbstractFacade {
 		if( facadeSingleton == null ) {
 			facadeSingleton = new FacadeProfile();	
 		}
-		return facadeSingleton;
+		return facadeSingleton;}
 
 
 

@@ -3,35 +3,43 @@ package UseCases.UserActions.profileView;
 import java.util.*;
 
 import domain.User;
-import facade.FacadeLogin;
+import facade.FacadeProfile;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class ProfileViewController {
+	@FXML 
+	private Label userLabel;
+	@FXML 
+	private Label emailLabel;
+	@FXML 
+	private Label descLabel;
+	@FXML 
+	private Label storiesLabel;	
+	
+   
+    	
 
-    public ProfileViewController() {
-    	@FXML 
-    	private TextField usernameText;
-    	@FXML 
-    	private TextField pswdText;
-    	public void login(ActionEvent event) {
-    		FacadeLogin facade = FacadeLogin.getFacade();
-    		try {
-    			User moi = facade.login(usernameText.getText(), pswdText.getText());
-    			System.out.println(moi);
-    		} catch (Exception e) {
-    			// TODO Auto-generated catch block
-    			System.out.println(e);
-    		}
+    public void Subscribe(ActionEvent event) {
+
     }
+    
 
-    public void editProfile(ActionEvent event) {
+    public void editBio(ActionEvent event) {
   
     }
 
     public void subscribe(ActionEvent event) {
-  
+    	FacadeProfile facade = FacadeProfile.getFacade();
+    	try {
+    	
+    	} catch (Exception e) 
+    	{
+    		// TODO Auto-generated catch block
+    		System.out.println(e);
+    	}
     }
 
 }

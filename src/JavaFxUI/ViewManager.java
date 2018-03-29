@@ -9,6 +9,7 @@ import UseCases.AdminActions.renameView.RenameView;
 import UseCases.PlayerActions.reportView.ReportView;
 import UseCases.UserActions.forgotPasswordView.ForgotPasswordView;
 import UseCases.UserActions.loginView.LoginView;
+import UseCases.UserActions.profileView.ProfileView;
 import UseCases.UserActions.registerView.RegisterView;
 import domain.Page;
 import domain.Story;
@@ -175,7 +176,7 @@ public class ViewManager extends Application {
         // TODO implement here
     	mainStage.setTitle("User Profile");
     	AnchorPane root = new AnchorPane();
-		Scene scene = new UserProfileView(root,400, 600);
+		Scene scene = new ProfileView(root,400, 600);
 		((ManageUserView)scene).init();
 		mainStage.setScene(scene);
         mainStage.show();

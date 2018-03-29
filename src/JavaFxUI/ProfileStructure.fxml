@@ -50,18 +50,15 @@
             <Label fx:id="emailLabel" text="Email" />
             <Label fx:id="descLabel" text="Description" />
             <Label fx:id="storiesLabel" alignment="CENTER" text="Stories" />
-            <Region layoutX="10.0" layoutY="10.0" prefHeight="374.0" prefWidth="272.0" HBox.hgrow="ALWAYS" />
+            <Region layoutX="10.0" layoutY="10.0" prefHeight="323.0" prefWidth="63.0" HBox.hgrow="ALWAYS" />
          </children>
       </HBox>
    </center>
    <bottom>
-      <VBox prefHeight="31.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="12.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="subButton" mnemonicParsing="false" onAction="#subscribe" text="Subscribe" VBox.vgrow="ALWAYS">
-               <VBox.margin>
-                  <Insets left="235.0" right="235.0" />
-               </VBox.margin>
-            </Button>
+            <Button fx:id="editButton" mnemonicParsing="false" onAction="#editBio" text="Edit" />
+            <Button fx:id="subscribeButton" mnemonicParsing="false" onAction="#subscribe" text="Subscribe" />
          </children>
       </VBox>
    </bottom>
