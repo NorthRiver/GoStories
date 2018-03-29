@@ -14,6 +14,7 @@ CREATE TABLE public.users(
 	name       VARCHAR (12) NOT NULL UNIQUE,
 	birthday   DATE   ,
 	dateFinBan DATE   ,
+	bio        VARCHAR (500)  ,
 	CONSTRAINT prk_constraint_users PRIMARY KEY (id_user)
 )WITHOUT OIDS;
 
