@@ -2,6 +2,8 @@ package facade;
 
 import java.util.*;
 
+import DAO.FactoryDAO;
+import DAO.ReportDAO;
 import domain.Report;
 
 /**
@@ -9,10 +11,24 @@ import domain.Report;
  */
 public class FacadeReadReport extends AbstractFacade {
 
+	private static FacadeReadReport instance;
+	private ReportDAO reportDAO;
+	
     /**
      * Default constructor
      */
-    public FacadeReadReport() {
+    private FacadeReadReport() {
+    	FactoryDAO factoryDAO = FactoryDAO.getFactory();;
+    	reportDAO = factoryDAO.getReportDAO();
+    	
+    }
+    
+    //Singleton
+    public static FacadeReadReport getFacadeReadReport(){
+    	if(instance==null){
+    		instance = new FacadeReadReport();
+    	}
+    	return instance;
     }
 
     /**

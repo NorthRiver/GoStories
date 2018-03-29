@@ -14,7 +14,7 @@ public class FacadeBanMenu extends AbstractFacade {
 	private static FacadeBanMenu facadeSingleton;
 	private UserDAO userDao;
 	
-    public FacadeBanMenu() {
+    private FacadeBanMenu() {
     	FactoryDAO factoryDao;
 		factoryDao = FactoryDAO.getFactory();
 		userDao = factoryDao.getUserDAO();
