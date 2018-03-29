@@ -2,6 +2,8 @@ package facade;
 
 import java.util.*;
 
+import DAO.FactoryDAO;
+import DAO.UserDAO;
 import domain.Story;
 import domain.User;
 
@@ -13,8 +15,22 @@ public class FacadeProfile extends AbstractFacade {
     /**
      * Default constructor
      */
-    public FacadeProfile() {
-    }
+	private static FacadeProfile facadeSingleton;
+	private UserDAO userDao;
+	
+	
+	private FacadeProfile() {
+		FactoryDAO factoryDao;
+		factoryDao = FactoryDAO.getFactory();
+		userDao = factoryDao.getUserDAO();
+	}
+	
+	public static FacadeProfile getFacade() {
+		if( facadeSingleton == null ) {
+			facadeSingleton = new FacadeProfile();	
+		}
+		return facadeSingleton;
+
 
 
     /**

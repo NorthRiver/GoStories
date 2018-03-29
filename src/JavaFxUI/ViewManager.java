@@ -173,6 +173,13 @@ public class ViewManager extends Application {
      */
     public static void goToUserProfile(User user) {
         // TODO implement here
+    	mainStage.setTitle("User Profile");
+    	AnchorPane root = new AnchorPane();
+		Scene scene = new UserProfileView(root,400, 600);
+		((ManageUserView)scene).init();
+		mainStage.setScene(scene);
+        mainStage.show();
+        return;
     }
 
 }
