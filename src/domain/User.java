@@ -17,7 +17,7 @@ public class User {
     public String email;
     public Date birthDate;
     public String password;
-    public Boolean isAdmn;
+    public Boolean isAdmin;
     public Boolean isBanned;
     public String bio;
     public Date banUntilDate;
@@ -79,11 +79,11 @@ public class User {
 		this.bio = bio;
 	}
 	public Boolean getIsAdmn() {
-		return isAdmn;
+		return isAdmin;
 	}
 
-	public void setIsAdmn(Boolean isAdmn) {
-		this.isAdmn = isAdmn;
+	public void setIsAdmin(Boolean isAdmin) {
+		this.isAdmin = isAdmin;
 	}
 
 	public void setIsBanned(Boolean isBanned) {

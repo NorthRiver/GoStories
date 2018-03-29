@@ -24,8 +24,8 @@ public class UserDAOPSQL extends UserDAO {
     protected User queryToUser(User user, ResultSet rs) throws SQLException {
     	user.setBirthDate(rs.getDate("birthdate"));
     	user.setEmail(rs.getString("email"));
-    	user.setIsAdmn(rs.getBoolean("isAdmin"));
-    	user.setUsername("username");
+    	user.setIsAdmin(rs.getBoolean("isAdmin"));
+    	user.setUsername(rs.getString("username"));
     	return user;
     }
     
@@ -65,8 +65,7 @@ public class UserDAOPSQL extends UserDAO {
 				st.close();				
 				throw new Exception("Username and password doesn't match.");
 			} else {
-				loggedUser.setUsername(rs.getString("name"));
-				loggedUser.setEmail(rs.getString("email"));
+				loggedUser = queryToUser(loggedUser, rs); 
 				rs.close();
 				st.close();				
 			}

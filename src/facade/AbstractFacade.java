@@ -8,13 +8,6 @@ import domain.User;
  * 
  */
 public abstract class AbstractFacade {
-
-    /**
-     * Default constructor
-     */
-    public AbstractFacade() {
-    }
-
     /**
      * 
      */
@@ -23,12 +16,11 @@ public abstract class AbstractFacade {
      * @return
      */
     public static User getUser() {
-        // TODO implement here
-        return null;
+        return myUser;
     }
 
     public static void setUser(User user) {
-        // TODO implement here
+    	myUser = user;
     }
 
 }
