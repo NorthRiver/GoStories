@@ -29,6 +29,7 @@ public class ManageUserController {
     }
 	
 	public void setUserList(Set<User> users) {
+		userListVbox.getChildren().clear();
 		HBox newHbox;
 		Label usernameLabel;
 		Button renameButton;
@@ -47,6 +48,7 @@ public class ManageUserController {
 			newHbox.setSpacing(20);
 			userListVbox.getChildren().add(newHbox);
 		}
+		userListVbox.layout();
 	}
 	
     public void displaySearchResult(ActionEvent event) {
@@ -58,7 +60,7 @@ public class ManageUserController {
     class RenameHandler implements EventHandler<ActionEvent>{
     	User user;
     	RenameHandler(User user){
-    		user = user;
+    		this.user = user;
     	}
 		@Override
 		public void handle(ActionEvent event) {
@@ -69,7 +71,7 @@ public class ManageUserController {
     class BanHandler implements EventHandler<ActionEvent>{
     	User user;
     	BanHandler(User user){
-    		user = user;
+    		this.user = user;
     	}
 		@Override
 		public void handle(ActionEvent event) {

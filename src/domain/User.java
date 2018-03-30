@@ -84,8 +84,12 @@ public class User {
 	}
 
 	public Boolean getIsBanned() {
-		Date today = new Date();
-		return today.after(banUntilDate);
+		if (banUntilDate == null) {
+			return false;
+		} else {
+			Date today = new Date();
+			return today.after(banUntilDate);	
+		}
 	}
 
 	public Date getBirthDate() {

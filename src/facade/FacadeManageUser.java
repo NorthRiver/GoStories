@@ -16,8 +16,7 @@ public class FacadeManageUser extends AbstractFacade {
 	
 	
 	private FacadeManageUser() {
-		FactoryDAO factoryDao;
-		factoryDao = FactoryDAO.getFactory();
+		FactoryDAO factoryDao = FactoryDAO.getFactory();
 		userDao = factoryDao.getUserDAO();
 	}
 	
@@ -43,7 +42,6 @@ public class FacadeManageUser extends AbstractFacade {
 	public void unBanUser(User user) {
 		user.setBanUntilDate(new Date());
 		userDao.saveUser(user);
-		
 	}
 
 	public Set<User> getUserListByName(String text, int maxSize, int offset) {

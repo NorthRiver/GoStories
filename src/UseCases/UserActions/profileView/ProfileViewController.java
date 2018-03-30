@@ -74,7 +74,7 @@ public class ProfileViewController {
     	userLabel.setText(currentUser.username);
     	emailLabel.setText(currentUser.email);
     	descLabel.setText(currentUser.bio);
-    	if (currentUser.equals(AbstractFacade.getUser()) || AbstractFacade.getUser().isAdmin) {
+    	if (currentUser.equals(AbstractFacade.getUser())) {
     		subscribeButton.setVisible(false);
     	}
     	else {

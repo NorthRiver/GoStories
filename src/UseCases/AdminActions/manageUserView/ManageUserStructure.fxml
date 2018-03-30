@@ -9,7 +9,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UseCases.AdminActions.manageUserView.ManageUserController">
    <children>
       <Text layoutX="92.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="121.47003173828125" />
-      <TextField layoutX="92.0" layoutY="38.0" />
+      <TextField layoutX="92.0" layoutY="38.0" fx:id="usernameField"/>
       <Button layoutX="274.0" layoutY="38.0" mnemonicParsing="false" onAction="#displaySearchResult" prefHeight="25.0" prefWidth="102.0" text="Search" />
       <VBox fx:id="userListVbox" layoutX="78.0" layoutY="109.0" prefHeight="258.0" prefWidth="467.0" />
    </children>

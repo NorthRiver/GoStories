@@ -27,6 +27,7 @@ public class UserDAOPSQL extends UserDAO {
     	user.setIsAdmin(rs.getBoolean("isAdmin"));
     	user.setUsername(rs.getString("username"));
     	user.setBio(rs.getString("bio"));
+    	user.setBanUntilDate(rs.getDate("bannedUpTo"));
     	return user;
     }
     
@@ -145,8 +146,8 @@ public class UserDAOPSQL extends UserDAO {
 	@Override
 	public Set<User> getListUserByName(String text, int maxSize, int offset) throws Exception {
 		Set<User> users = new HashSet<User>();
-		PreparedStatement st = connectionPSQL.prepareStatement("SELECT * FROM users WHERE username LIKE %?% LIMIT ? OFFSET ?");
-		st.setString(1, text);
+		PreparedStatement st = connectionPSQL.prepareStatement("SELECT * FROM users WHERE username LIKE ? LIMIT ? OFFSET ?");
+		st.setString(1,'%' + text + '%');
 		st.setInt(2, maxSize);
 		st.setInt(3, offset);
 		ResultSet rs = st.executeQuery();

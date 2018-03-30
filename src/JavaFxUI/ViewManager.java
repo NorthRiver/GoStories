@@ -38,23 +38,23 @@ public class ViewManager extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		mainStage = primaryStage;
-		goToLogin();
+//		goToLogin();
 		
 		/******************** TESTING ZONES ********************/
 		/******************** Data Fetching ********************/
-//		Story story = FactoryDAO.getFactory().getStoryDAO().getStoryByName("demoStory");
+		Story story = FactoryDAO.getFactory().getStoryDAO().getStoryByName("demoStory");
 //		User user = FactoryDAO.getFactory().getUserDAO().findUserByUsername("demoUser");
 //		User author = FactoryDAO.getFactory().getUserDAO().findUserByUsername("demoAuthor");
 		User admin = FactoryDAO.getFactory().getUserDAO().findUserByUsername("demoAdmin");
 		AbstractFacade.setUser(admin);
-//		Page page = FactoryDAO.getFactory().getPageDAO().getPageByNumber(story.title, 2);
+		Page page = FactoryDAO.getFactory().getPageDAO().getPageByNumber(story.title, 1);
 		/******************** view loading ********************/
 //		goToHome();
 //		goToReadReport();
-//		goToStoryPage(page, story);
+		goToStoryPage(page, story);
 //		goToStoryInfo(story);
 //		goToUserProfile(author);
-		goToManageUser();
+//		goToManageUser();
 	}
 
     /**
