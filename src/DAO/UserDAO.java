@@ -33,4 +33,6 @@ public abstract class UserDAO {
 	public abstract Boolean isUserSubscribed(User subscribedTo, User subscriber);
 	
 	public abstract void cancelSubscription(User subscribedTo, User subscriber);
+
+	public abstract void editUser(User userToChange);
 }

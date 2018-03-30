@@ -5,7 +5,7 @@ import java.util.*;
 
 import domain.User;
 import facade.FacadeManageUser;
-import javaFxUI.ViewManager;
+import JavaFxUI.ViewManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

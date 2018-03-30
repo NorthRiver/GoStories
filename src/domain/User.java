@@ -21,6 +21,8 @@ public class User {
     public Boolean isBanned;
     public String bio;
     public Date banUntilDate;
+	public String id_user;
+
 
 
 

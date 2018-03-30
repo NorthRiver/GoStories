@@ -70,13 +70,22 @@ public class UserDAOPSQL extends UserDAO {
 	@Override
 	public void subscribeToAuthor(User subscriber, User author) {
 		// TODO Auto-generated method stub
+		try {
+			PreparedStatement st = connectionPSQL.prepareStatement("INSERT INTO Subscribe (id_user,id_user_users) VALUES (? , ? )");
+			st.setString(1, author.id_user);
+			st.setString(2, subscriber.id_user);
+			st.executeQuery();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 
 	@Override
 	public ArrayList<String> getSubscribedUser(User subscriber) {
 		try {
-			PreparedStatement st = connectionPSQL.prepareStatement("SELECT name FROM users, subscribed WHERE subscribedtoname = ? AND subscribername = users.name");
+			PreparedStatement st = connectionPSQL.prepareStatement("SELECT * FROM Subscribe s, users u WHERE s.id_user = u.id_user AND u.name = ? AND s.id_user_users = u.id_user");
 			st.setString(1, subscriber.username);
 			ResultSet rs = st.executeQuery();
 			ArrayList<String> names = null;
@@ -138,13 +147,59 @@ public class UserDAOPSQL extends UserDAO {
 	@Override
 	public Boolean isUserSubscribed(User subscribedTo, User subscriber) {
 		// TODO Auto-generated method stub
+		try {
+			PreparedStatement st = connectionPSQL.prepareStatement("SELECT * FROM Subscribe WHERE id_user = ? AND id_user_users = ?");
+			st.setString(1, subscribedTo.id_user);
+			st.setString(2, subscriber.id_user);
+			ResultSet rs = st.executeQuery();
+			if( !rs.next() ) {
+				rs.close();
+				st.close();				
+				return false;
+			} 
+			else 
+			{
+				rs.close();
+				st.close();
+				return true;
+			}
+		}
+		catch (SQLException e) 
+		{
+			// TODO Auto-generated catch block
+    		e.printStackTrace();
+   		}
 		return null;
 	}
 
 	@Override
 	public void cancelSubscription(User subscribedTo, User subscriber) {
 		// TODO Auto-generated method stub
-		
+		PreparedStatement st;
+		try {
+			st = connectionPSQL.prepareStatement("DELETE FROM Subscribe WHERE id_user = ? AND id_user_users = ?");
+			st.setString(1, subscribedTo.id_user);
+			st.setString(2, subscriber.id_user);
+			st.executeQuery();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+	@Override
+	public void editUser(User userToChange) {
+		PreparedStatement st;
+		try {
+			st = connectionPSQL.prepareStatement("UPDATE users SET bio = ? WHERE id_user = ?");
+			st.setString(1, userToChange.bio);
+			st.setString(2, userToChange.id_user);
+			ResultSet rs = st.executeQuery();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 
