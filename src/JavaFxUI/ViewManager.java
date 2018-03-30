@@ -6,6 +6,7 @@ import DAO.FactoryDAO;
 import UseCases.AdminActions.banMenuView.BanMenuView;
 import UseCases.AdminActions.manageUserView.ManageUserView;
 import UseCases.AdminActions.renameView.RenameView;
+import UseCases.PlayerActions.playStoryView.PlayStoryView;
 import UseCases.PlayerActions.reportView.ReportView;
 import UseCases.PlayerActions.storyInfoView.StoryInfoView;
 import UseCases.UserActions.forgotPasswordView.ForgotPasswordView;
@@ -46,11 +47,12 @@ public class ViewManager extends Application {
 //		User author = FactoryDAO.getFactory().getUserDAO().findUserByUsername("demoAuthor");
 //		User admin = FactoryDAO.getFactory().getUserDAO().findUserByUsername("demoAdmin");
 //		AbstractFacade.setUser(admin);
-		
-		
+//		Page page = FactoryDAO.getFactory().getPageDAO().getPageByNumber(story.title, 2);
 		/******************** view loading ********************/
-//		goToStoryInfo(story);
 //		goToHome();
+//		goToReadReport();
+//		goToStoryPage(page, story);
+//		goToStoryInfo(story);
 	}
 
     /**
@@ -62,7 +64,6 @@ public class ViewManager extends Application {
 		Scene scene = new LoginView(root,300, 300);
 		mainStage.setScene(scene);
         mainStage.show();
-        return;
     }
 
     /**
@@ -74,7 +75,6 @@ public class ViewManager extends Application {
 		Scene scene = new ForgotPasswordView(root,300, 300);
 		mainStage.setScene(scene);
         mainStage.show();
-        return;
     }
 
     /**
@@ -86,7 +86,6 @@ public class ViewManager extends Application {
 		Scene scene = new RegisterView(root,300, 300);
 		mainStage.setScene(scene);
         mainStage.show();
-        return;
     }
 
     /**
@@ -99,7 +98,6 @@ public class ViewManager extends Application {
 		((ReportView)scene).init(page);
 		mainStage.setScene(scene);
         mainStage.show();
-        return;
     }
 
     /**
@@ -107,7 +105,6 @@ public class ViewManager extends Application {
      */
     public static void goToReadReport() {
         // TODO implement here
-        return;
     }
 
     /**
@@ -115,7 +112,6 @@ public class ViewManager extends Application {
      */
     public static void goToManageStories() {
         // TODO implement here
-        return;
     }
 
     /**
@@ -128,7 +124,6 @@ public class ViewManager extends Application {
 		((ManageUserView)scene).init();
 		mainStage.setScene(scene);
         mainStage.show();
-        return;
     }
     public static void goToRenameUser(User user) {
     	mainStage.setTitle("Rename User");
@@ -137,7 +132,6 @@ public class ViewManager extends Application {
 		((RenameView)scene).init(user);
 		mainStage.setScene(scene);
         mainStage.show();
-        return;
     }
     public static void goToBanUser(User user) {
     	mainStage.setTitle("Ban User");
@@ -146,14 +140,18 @@ public class ViewManager extends Application {
 		((BanMenuView)scene).init(user);
 		mainStage.setScene(scene);
         mainStage.show();
-        return;
     }
     /**
      * @param page 
      * @param story
      */
     public static void goToStoryPage(Page page, Story story) {
-        // TODO implement here
+    	mainStage.setTitle(story.title);
+    	AnchorPane root = new AnchorPane();
+		Scene scene = new PlayStoryView(root, 600.0, 400.0);
+		((PlayStoryView)scene).init(page, story);
+		mainStage.setScene(scene);
+        mainStage.show();
     }
 
     /**
@@ -166,7 +164,6 @@ public class ViewManager extends Application {
 		((HomepageView)scene).init();
 		mainStage.setScene(scene);
         mainStage.show();
-        return;
     }
 
     /**
@@ -194,7 +191,6 @@ public class ViewManager extends Application {
 		((StoryInfoView)scene).init(story);
 		mainStage.setScene(scene);
         mainStage.show();
-        return;
     }
 
     /**
@@ -207,7 +203,6 @@ public class ViewManager extends Application {
 		((ProfileView)scene).init(user);
 		mainStage.setScene(scene);
         mainStage.show();
-        return;
     }
 
 }

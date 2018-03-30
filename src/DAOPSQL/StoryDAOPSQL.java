@@ -63,24 +63,20 @@ public class StoryDAOPSQL extends StoryDAO {
 	@Override
 	public Story getStoryByName(String storyName) throws Exception {
 		Story story = new Story();
-		try {
-			PreparedStatement st = connectionPSQL.prepareStatement("SELECT * FROM stories WHERE title = ?");
-			st.setString(1, storyName);
-			ResultSet rs = st.executeQuery();
-			// Does the response exists
-			if( !rs.next() ) {
-				rs.close();
-				st.close();				
-				throw new Exception("No Story Found for that name");
-			} else {
-				story = queryToStory(story, rs);
-				rs.close();
-				st.close();				
-			}
-    		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-    			e.printStackTrace();
+		PreparedStatement st = connectionPSQL.prepareStatement("SELECT * FROM stories WHERE title = ?");
+		st.setString(1, storyName);
+		ResultSet rs = st.executeQuery();
+		// Does the response exists
+		if( !rs.next() ) {
+			rs.close();
+			st.close();				
+			throw new Exception("No Story Found for that name");
+		} else {
+			story = queryToStory(story, rs);
+			rs.close();
+			st.close();				
 		}
+    	
 		return story;
 	}
 
