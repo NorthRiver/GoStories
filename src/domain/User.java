@@ -18,7 +18,6 @@ public class User {
     public Date birthDate;
     public String password;
     public Boolean isAdmin;
-    public Boolean isBanned;
     public String bio;
     public Date banUntilDate;
 	public String id_user;
@@ -86,12 +85,9 @@ public class User {
 		this.isAdmin = isAdmin;
 	}
 
-	public void setIsBanned(Boolean isBanned) {
-		this.isBanned = isBanned;
-	}
-
 	public Boolean getIsBanned() {
-		return isBanned;
+		Date today = new Date();
+		return today.after(banUntilDate);
 	}
 
 	public Date getBirthDate() {

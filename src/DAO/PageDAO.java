@@ -1,5 +1,6 @@
 package DAO;
 
+import java.sql.SQLException;
 import java.util.*;
 
 import domain.Link;
@@ -13,7 +14,7 @@ public abstract class PageDAO {
 
     
 
-    public abstract Page getPageByNumber(Story story, String pageNumber);
+    public abstract Page getPageByNumber(String storyTitle, int pageNumber) throws Exception;
      
     public abstract void addLink(Page page, Link link);
 
