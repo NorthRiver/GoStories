@@ -1,6 +1,7 @@
 package DAO;
 
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.*;
 
 import domain.Story;
@@ -17,7 +18,7 @@ public abstract class UserDAO {
 
     public abstract void disableUser(User user);
 
-    public abstract void saveUser(User user);
+    public abstract void saveUser(User user) throws Exception;
 
     public abstract void subscribeToAuthor(User subscriber, User author) throws Exception;
 

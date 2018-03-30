@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.*;
 
 import DAO.UserDAO;
@@ -79,12 +80,11 @@ public class UserDAOPSQL extends UserDAO {
 		
 		return loggedUser;
 	}
+	@Override
+	
 	public User register(String username, String password, String email, LocalDate birthdate, String gender) throws Exception {
 		User user = new User();
-		user.username = username;
-		user.birthdate = birthdate;
-		user.gender = gender;
-		user.email = email;
+		user.isAdmin = false;
 		return user;
 	}
 
@@ -95,10 +95,14 @@ public class UserDAOPSQL extends UserDAO {
 	}
 
 	@Override
-	public void saveUser(User user) {
-		// TODO Auto-generated method stub
-		//IF isBanned = false et que dans la base egale vrai, debannir
-		
+	public void saveUser(User user) throws Exception {
+		PreparedStatement st = connectionPSQL.prepareStatement("UPDATE users SET email=?, bio=?, banUntilDate=? where username=?");
+		st.setString(1, user.email);
+		st.setString(2, user.bio);
+		st.setDate(3, new java.sql.Date(user.banUntilDate.getTime()));
+		st.setString(4, user.username);
+		st.executeUpdate();
+		st.close();
 	}
 
 
@@ -201,6 +205,5 @@ public class UserDAOPSQL extends UserDAO {
 		st.executeUpdate();
 		st.close();
 	}
-
 
 }

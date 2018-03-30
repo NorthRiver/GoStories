@@ -61,7 +61,7 @@
             <TextField fx:id="pswdText" layoutX="78.0" layoutY="110.0" />
             <Text layoutX="123.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
             <Button layoutX="107.0" layoutY="150.0" mnemonicParsing="false" onAction="#login" prefHeight="54.0" prefWidth="91.0" text="Login" />
-            <Button layoutX="107.0" layoutY="211.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="91.0" text="Register" />
+            <Button layoutX="107.0" layoutY="211.0" mnemonicParsing="false" onAction="#register" prefHeight="23.0" prefWidth="91.0" text="Register" />
             <Button layoutX="107.0" layoutY="247.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="91.0" text="Recover Pswd" />
       </children>
     </AnchorPane>

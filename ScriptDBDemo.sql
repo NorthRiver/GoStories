@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS users (
 	password varchar(255) NOT NULL,
 	email varchar(255) NOT NULL,
 	birthdate date,
+	bio text,
 	isAdmin bool DEFAULT FALSE,
 	bannedUpTo date DEFAULT NULL
 );

@@ -38,7 +38,7 @@ public class ManageUserController {
 			newHbox= new HBox();
 			newHbox.setAlignment(Pos.TOP_LEFT);
 			usernameLabel = new Label(user.username);
-			banButton = new Button("Ban");
+			banButton = new Button(user.getIsBanned() ? "Unban" : "ban");
 			banButton.setOnAction(new BanHandler(user));
 			renameButton = new Button("Rename");
 			renameButton.setOnAction(new RenameHandler(user)); 

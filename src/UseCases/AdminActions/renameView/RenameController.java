@@ -5,7 +5,7 @@ import java.util.*;
 import domain.User;
 import facade.FacadeManageUser;
 import facade.FacadeRename;
-import javaFxUI.ViewManager;
+import JavaFxUI.ViewManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -36,13 +36,13 @@ public class RenameController {
     public void validate(ActionEvent event) {
     	FacadeRename facade = FacadeRename.getFacade();
     	facade.renameUser(currentUser, newName.getText());
-    	ViewManager.gotToManageUser();
+    	ViewManager.goToManageUser();
         return;
     }
 
 
     public void cancel(ActionEvent event) {
-    	ViewManager.gotToManageUser();
+    	ViewManager.goToManageUser();
         return;
     }
 

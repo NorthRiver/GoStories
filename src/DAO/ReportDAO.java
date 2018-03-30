@@ -1,5 +1,6 @@
 package DAO;
 
+import java.sql.SQLException;
 import java.util.*;
 
 import domain.Page;
@@ -14,9 +15,11 @@ public abstract class ReportDAO {
     public abstract Report getReportById(String reportId);
 
 
-    public abstract Set<Report> getLatestReport();
+    public abstract Set<Report> getLatestReport() throws SQLException;
 
 
-    public abstract void sendReport(Story story, Page page, User user, Report report);
+    public abstract void sendReport(Report report);
+    
+    public abstract void reviewReport(Report report);
 
 }

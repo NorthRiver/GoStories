@@ -25,15 +25,15 @@ public class FacadeBanMenu extends AbstractFacade {
      * @param day 
      * @return
      */
-    public void banUser(User user, int day) {
-    	Date dt = new Date();
-    	Calendar c = Calendar.getInstance(); 
-    	c.setTime(dt); 
-    	c.add(Calendar.DATE, day);
-    	dt = c.getTime();
+    public void banUser(User user, int days) {
+    	Date dt = (new Date((new Date()).getTime() + (days * 24 * 60 * 60)));
     	user.setBanUntilDate(dt);
-    	userDao.saveUser(user);
-        
+    	try {
+			userDao.saveUser(user);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 
 	public static FacadeBanMenu getFacade() {

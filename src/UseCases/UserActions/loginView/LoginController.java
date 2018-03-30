@@ -29,4 +29,8 @@ public class LoginController {
 			alertLabel.setText(e.getMessage());
 		}
 	}
+	
+	public void register(ActionEvent event) {
+		ViewManager.goToRegister();
+	}
 }

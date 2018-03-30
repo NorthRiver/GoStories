@@ -54,7 +54,6 @@ public class RegisterController {
 		User moi = facade.register(usernameText.getText(), pswdText.getText(), email.getText(),birthPicker.getValue(), gender.getValue());
 		facade.setUser(moi);
 		ViewManager.goToHome();
-		System.out.println("ghfjdfghgkjk");
 	}
 	
 //	class PasswordComparator implements EventHandler<KeyEvent> {

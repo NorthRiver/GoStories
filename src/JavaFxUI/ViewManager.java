@@ -5,6 +5,7 @@ import java.util.*;
 import DAO.FactoryDAO;
 import UseCases.AdminActions.banMenuView.BanMenuView;
 import UseCases.AdminActions.manageUserView.ManageUserView;
+import UseCases.AdminActions.readReportView.ReadReportView;
 import UseCases.AdminActions.renameView.RenameView;
 import UseCases.PlayerActions.playStoryView.PlayStoryView;
 import UseCases.PlayerActions.reportView.ReportView;
@@ -38,23 +39,24 @@ public class ViewManager extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		mainStage = primaryStage;
-//		goToLogin();
+		goToLogin();
 		
 		/******************** TESTING ZONES ********************/
 		/******************** Data Fetching ********************/
-		Story story = FactoryDAO.getFactory().getStoryDAO().getStoryByName("demoStory");
+//		Story story = FactoryDAO.getFactory().getStoryDAO().getStoryByName("demoStory");
 //		User user = FactoryDAO.getFactory().getUserDAO().findUserByUsername("demoUser");
 //		User author = FactoryDAO.getFactory().getUserDAO().findUserByUsername("demoAuthor");
-		User admin = FactoryDAO.getFactory().getUserDAO().findUserByUsername("demoAdmin");
-		AbstractFacade.setUser(admin);
-		Page page = FactoryDAO.getFactory().getPageDAO().getPageByNumber(story.title, 1);
+//		User admin = FactoryDAO.getFactory().getUserDAO().findUserByUsername("demoAdmin");
+//		AbstractFacade.setUser(admin);
+//		Page page = FactoryDAO.getFactory().getPageDAO().getPageByNumber(story.title, 1);
 		/******************** view loading ********************/
 //		goToHome();
 //		goToReadReport();
-		goToStoryPage(page, story);
+//		goToStoryPage(page, story);
 //		goToStoryInfo(story);
 //		goToUserProfile(author);
 //		goToManageUser();
+//		goToBanUser(user);
 	}
 
     /**
@@ -85,7 +87,8 @@ public class ViewManager extends Application {
     public static void goToRegister() {
     	mainStage.setTitle("Register");
     	AnchorPane root = new AnchorPane();
-		Scene scene = new RegisterView(root,300, 300);
+		Scene scene = new RegisterView(root,650, 650);
+		((RegisterView)scene).init();
 		mainStage.setScene(scene);
         mainStage.show();
     }
@@ -106,7 +109,12 @@ public class ViewManager extends Application {
      * @return
      */
     public static void goToReadReport() {
-        // TODO implement here
+    	mainStage.setTitle("Read report");
+    	AnchorPane root = new AnchorPane();
+		Scene scene = new ReadReportView(root,600, 400);
+		((ReadReportView)scene).init();
+		mainStage.setScene(scene);
+        mainStage.show();
     }
 
     /**
@@ -138,7 +146,7 @@ public class ViewManager extends Application {
     public static void goToBanUser(User user) {
     	mainStage.setTitle("Ban User");
     	AnchorPane root = new AnchorPane();
-		Scene scene = new BanMenuView(root,400, 600);
+		Scene scene = new BanMenuView(root,600, 400);
 		((BanMenuView)scene).init(user);
 		mainStage.setScene(scene);
         mainStage.show();

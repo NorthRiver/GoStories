@@ -21,15 +21,15 @@ public class BanMenuView extends Scene {
 
 
 
-	private RenameController controller;
+	private BanMenuController controller;
 
     public BanMenuView(AnchorPane root, double width, double height) {
     	super(root, width, height);
-		URL url = getClass().getResource("UseCasesAdminActions.banMenuView.BanMenuStructure.fxml");
+		URL url = getClass().getResource("BanMenuStructure.fxml");
 	    FXMLLoader fxmlLoader = new FXMLLoader(url);
 	    try {
 	    AnchorPane root2 = (AnchorPane) fxmlLoader.load();
-	    controller = fxmlLoader.<RenameController>getController();
+	    controller = fxmlLoader.<BanMenuController>getController();
 	    root.getChildren().add(root2);
 	    }
 	    catch (IOException ex) {
@@ -38,9 +38,7 @@ public class BanMenuView extends Scene {
 	}
 
 	public void init(User user) {
-
         controller.init(user);
-        return;
     }
 
 }

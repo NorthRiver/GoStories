@@ -4,7 +4,7 @@ import java.util.*;
 
 import DAO.FactoryDAO;
 import DAO.ReportDAO;
-import domain.Report;
+import domain.*;
 
 /**
  * 
@@ -77,5 +77,26 @@ public class FacadeReadReport extends AbstractFacade {
         // TODO implement here
         return null;
     }
+
+	public Page getPage(String storyTitle, int pageNumber) {
+		try {
+			return FactoryDAO.getFactory().getPageDAO().getPageByNumber(storyTitle, pageNumber);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public Story getStory(String string) {
+		try {
+			return FactoryDAO.getFactory().getStoryDAO().getStoryByName("demoStory");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
 
 }
