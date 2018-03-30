@@ -79,6 +79,14 @@ public class UserDAOPSQL extends UserDAO {
 		
 		return loggedUser;
 	}
+	public User register(String username, String password, String email, LocalDate birthdate, String gender) throws Exception {
+		User user = new User();
+		user.username = username;
+		user.birthdate = birthdate;
+		user.gender = gender;
+		user.email = email;
+		return user;
+	}
 
 	@Override
 	public void disableUser(User user) {

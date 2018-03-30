@@ -27,11 +27,12 @@ public abstract class UserDAO {
 
     public  abstract User getAuthorByStory(Story story) ;
 
-	public abstract Boolean isUserSubscribed(User subscribedTo, User subscriber) throws Exception;
+	public abstract User register(String username, String password, String email, LocalDate birthdate, String gender) throws Exception;
+	public abstract Set<User> getListUserByName(String text, int maxSize, int offset) throws Exception ;
 	
+	public abstract Boolean isUserSubscribed(User subscribedTo, User subscriber) throws Exception;
 	public abstract void cancelSubscription(User subscribedTo, User subscriber) throws Exception;
 
 	public abstract Set<User> getListOfUsers(int maxSize, int offset) throws Exception ;
 
-	public abstract Set<User> getListUserByName(String text, int maxSize, int offset) throws Exception ;
 }

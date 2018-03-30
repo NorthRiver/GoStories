@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="450.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UseCases.UserActions.registerView.RegisterController">
+   <children>
+      <VBox prefHeight="450.0" prefWidth="650.0">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <AnchorPane prefHeight="426.0" prefWidth="650.0">
+               <children>
+                  <ImageView fitHeight="109.0" fitWidth="124.0" layoutX="280.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Gostories.png" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="usernameText" layoutX="235.0" layoutY="135.0" promptText="ID" />
+                  <TextField fx:id="email" layoutX="235.0" layoutY="175.0" promptText="Email" />
+                  <ComboBox fx:id="gender" layoutX="234.0" layoutY="330.0" prefHeight="30.0" prefWidth="199.0" promptText="Gender" />
+                  <Button fx:id="confirm" layoutX="293.0" layoutY="374.0" mnemonicParsing="false" onAction="#register" text="Confirm">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <PasswordField fx:id="pswdText" layoutX="235.0" layoutY="215.0" prefHeight="30.0" prefWidth="199.0" promptText="Password" />
+                  <PasswordField fx:id="pswdText2" layoutX="235.0" layoutY="255.0" prefHeight="30.0" prefWidth="199.0" promptText="Password confirm" />
+                  <Label fx:id="errorLabel" layoutX="457.0" layoutY="220.0" prefHeight="25.0" prefWidth="158.0" textFill="#eb0000" />
+                  <DatePicker fx:id="birthPicker" layoutX="233.0" layoutY="294.0" prefHeight="30.0" prefWidth="199.0" promptText="Birthdate" />
+                  <Label fx:id="errorLabel1" layoutX="457.0" layoutY="138.0" prefHeight="53.0" prefWidth="158.0" textFill="#eb0000" wrapText="true" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
