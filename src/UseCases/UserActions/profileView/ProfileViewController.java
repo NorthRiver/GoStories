@@ -2,6 +2,7 @@ package UseCases.UserActions.profileView;
 
 import java.util.*;
 
+import JavaFxUI.ViewManager;
 import domain.User;
 import facade.AbstractFacade;
 import facade.FacadeManageUser;
@@ -36,6 +37,10 @@ public class ProfileViewController {
 	
 	public User currentUser;
 	public User connectedUser;
+	
+	public void searchUser(ActionEvent event) {
+		ViewManager.goToManageUser();
+	}
 	
     public void editBio(ActionEvent event) {
     	descLabel.setText(chBio.getText());

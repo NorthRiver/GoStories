@@ -41,7 +41,12 @@ public class FacadeManageUser extends AbstractFacade {
 
 	public void unBanUser(User user) {
 		user.setBanUntilDate(new Date());
-		userDao.saveUser(user);
+		try {
+			userDao.saveUser(user);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public Set<User> getUserListByName(String text, int maxSize, int offset) {

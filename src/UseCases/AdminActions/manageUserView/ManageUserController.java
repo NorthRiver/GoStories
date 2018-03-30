@@ -39,7 +39,7 @@ public class ManageUserController {
 			newHbox.setAlignment(Pos.TOP_LEFT);
 			usernameLabel = new Label(user.username);
 			banButton = new Button(user.getIsBanned() ? "Unban" : "ban");
-			banButton.setOnAction(new BanHandler(user));
+			banButton.setOnAction(new BanHandler(user, banButton));
 			renameButton = new Button("Rename");
 			renameButton.setOnAction(new RenameHandler(user)); 
 			newHbox.getChildren().add(usernameLabel);
@@ -70,7 +70,9 @@ public class ManageUserController {
     }
     class BanHandler implements EventHandler<ActionEvent>{
     	User user;
-    	BanHandler(User user){
+    	Button banbutt;
+    	BanHandler(User user, Button banB){
+    		this.banbutt = banB;
     		this.user = user;
     	}
 		@Override
@@ -78,6 +80,8 @@ public class ManageUserController {
 			if(user.getIsBanned()){
 	    		FacadeManageUser facade = FacadeManageUser.getFacade();
 	    		facade.unBanUser(user);
+	    		banbutt.setText("Ban");
+	    		user.banUntilDate = new Date(new Date().getTime()-1000);
 	    	}
 	    	else {
 	    		ViewManager.goToBanUser(user);

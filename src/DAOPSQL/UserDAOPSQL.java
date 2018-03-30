@@ -96,7 +96,7 @@ public class UserDAOPSQL extends UserDAO {
 
 	@Override
 	public void saveUser(User user) throws Exception {
-		PreparedStatement st = connectionPSQL.prepareStatement("UPDATE users SET email=?, bio=?, banUntilDate=? where username=?");
+		PreparedStatement st = connectionPSQL.prepareStatement("UPDATE users SET email=?, bio=?, bannedupto=? where username=?");
 		st.setString(1, user.email);
 		st.setString(2, user.bio);
 		st.setDate(3, new java.sql.Date(user.banUntilDate.getTime()));
