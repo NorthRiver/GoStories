@@ -26,6 +26,7 @@ public class UserDAOPSQL extends UserDAO {
     	user.setEmail(rs.getString("email"));
     	user.setIsAdmin(rs.getBoolean("isAdmin"));
     	user.setUsername(rs.getString("username"));
+    	user.setBio(rs.getString("bio"));
     	return user;
     }
     
@@ -91,16 +92,11 @@ public class UserDAOPSQL extends UserDAO {
 		
 	}
 
-	@Override
-	public void subscribeToAuthor(User subscriber, User author) {
-		// TODO Auto-generated method stub
-		
-	}
 
 	@Override
 	public ArrayList<String> getSubscribedUser(User subscriber) {
 		try {
-			PreparedStatement st = connectionPSQL.prepareStatement("SELECT name FROM users, subscribed WHERE subscribedtoname = ? AND subscribername = users.name");
+			PreparedStatement st = connectionPSQL.prepareStatement("SELECT u.* FROM users u, subscriptions sub WHERE sub.author = ? AND sub.subscriber = u.username");
 			st.setString(1, subscriber.username);
 			ResultSet rs = st.executeQuery();
 			ArrayList<String> names = null;
@@ -128,47 +124,73 @@ public class UserDAOPSQL extends UserDAO {
 	}
 
 	@Override
-	public User[] getListOfEigthtUsers(int offset) {
-		User userList[] = new User[8];
-		try {
-			PreparedStatement st = connectionPSQL.prepareStatement("SELECT * FROM users LIMIT 8 OFFSET ?");
-			st.setInt(1, offset);
-			ResultSet rs = st.executeQuery();
-			int i =0;
-			while( !rs.next() && i<8 ) {
-				User user = new User();
-				user.setUsername(rs.getString("name"));
-				//TODO Recuperer
-				user.setIsBanned(false);
-				userList[i] = user;
-				i++;
-				
-			}
-				rs.close();
-				st.close();				
-    		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-    			e.printStackTrace();
+	public Set<User> getListOfUsers(int maxSize, int offset) throws Exception {
+		Set<User> users = new HashSet<User>();
+		PreparedStatement st = connectionPSQL.prepareStatement("SELECT * FROM users LIMIT ? OFFSET ?");
+		st.setInt(1, maxSize);
+		st.setInt(2, offset);
+		ResultSet rs = st.executeQuery();
+		int i = 0;
+		User user;
+		while( rs.next() && i<maxSize ) {
+			user = queryToUser(new User(), rs);
+			users.add(user);
+			i++;
 		}
-		return userList;
+		rs.close();
+		st.close();					
+		return users;
 	}
 
 	@Override
-	public User[] getListUserByName(String text, int offset) {
-		// TODO Auto-generated method stub
-		return null;
+	public Set<User> getListUserByName(String text, int maxSize, int offset) throws Exception {
+		Set<User> users = new HashSet<User>();
+		PreparedStatement st = connectionPSQL.prepareStatement("SELECT * FROM users WHERE username LIKE %?% LIMIT ? OFFSET ?");
+		st.setString(1, text);
+		st.setInt(2, maxSize);
+		st.setInt(3, offset);
+		ResultSet rs = st.executeQuery();
+		int i = 0;
+		User user;
+		while( rs.next() && i < maxSize ) {
+			user = queryToUser(new User(), rs);
+			users.add(user);
+			i++;
+		}
+		rs.close();
+		st.close();					
+		return users;
 	}
 
 	@Override
-	public Boolean isUserSubscribed(User subscribedTo, User subscriber) {
-		// TODO Auto-generated method stub
-		return null;
+	public Boolean isUserSubscribed(User subscriber, User author) throws Exception {
+		Boolean test = false;
+		PreparedStatement st = connectionPSQL.prepareStatement("SELECT * FROM subscriptions WHERE author = ? AND subscriber = ?");
+		st.setString(1, author.username);
+		st.setString(2, subscriber.username);
+		ResultSet rs = st.executeQuery();
+		test = rs.next();
+		rs.close();
+		st.close();
+		return test;
+	}
+	
+	@Override
+	public void subscribeToAuthor(User subscriber, User author) throws Exception {
+		PreparedStatement st = connectionPSQL.prepareStatement("INSERT INTO subscriptions (subscriber, author) VALUES (?, ?);");
+		st.setString(1, subscriber.username);
+		st.setString(2, author.username);
+		st.executeUpdate();
+		st.close();
 	}
 
 	@Override
-	public void cancelSubscription(User subscribedTo, User subscriber) {
-		// TODO Auto-generated method stub
-		
+	public void cancelSubscription(User subscriber, User author) throws Exception {
+		PreparedStatement st = connectionPSQL.prepareStatement("DELETE FROM subscriptions WHERE author = ? AND subscriber = ?");
+		st.setString(1, author.username);
+		st.setString(2, subscriber.username);
+		st.executeUpdate();
+		st.close();
 	}
 
 

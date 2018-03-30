@@ -1,5 +1,6 @@
 package DAO;
 
+import java.sql.SQLException;
 import java.util.*;
 
 import domain.Story;
@@ -18,7 +19,7 @@ public abstract class UserDAO {
 
     public abstract void saveUser(User user);
 
-    public abstract void subscribeToAuthor(User subscriber, User author);
+    public abstract void subscribeToAuthor(User subscriber, User author) throws Exception;
 
     public abstract ArrayList<String> getSubscribedUser(User subscriber) ;
 
@@ -26,11 +27,11 @@ public abstract class UserDAO {
 
     public  abstract User getAuthorByStory(Story story) ;
 
-	public abstract User[] getListOfEigthtUsers(int offset);
-
-	public abstract User[] getListUserByName(String text, int offset);
-
-	public abstract Boolean isUserSubscribed(User subscribedTo, User subscriber);
+	public abstract Boolean isUserSubscribed(User subscribedTo, User subscriber) throws Exception;
 	
-	public abstract void cancelSubscription(User subscribedTo, User subscriber);
+	public abstract void cancelSubscription(User subscribedTo, User subscriber) throws Exception;
+
+	public abstract Set<User> getListOfUsers(int maxSize, int offset) throws Exception ;
+
+	public abstract Set<User> getListUserByName(String text, int maxSize, int offset) throws Exception ;
 }

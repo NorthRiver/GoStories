@@ -23,25 +23,37 @@ public class FacadeManageUser extends AbstractFacade {
 	
 	public static FacadeManageUser getFacade() {
 		if( facadeSingleton == null ) {
-			facadeSingleton = new FacadeManageUser();	
+			facadeSingleton = new FacadeManageUser();
 		}
 		return facadeSingleton;
 	}
 	
 
-    public User[] getUserList(int offset) {
-        return userDao.getListOfEigthtUsers(offset);
+    public Set<User> getUserList(int maxSize, int offset) {
+        try {
+			return userDao.getListOfUsers(maxSize, offset);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        return null;
     }
 
 
 	public void unBanUser(User user) {
-		user.setIsBanned(false);
+		user.setBanUntilDate(new Date());
 		userDao.saveUser(user);
 		
 	}
 
-	public User[] getUserListByName(String text, int offset) {
-		return userDao.getListUserByName(text,offset);
+	public Set<User> getUserListByName(String text, int maxSize, int offset) {
+		try {
+			return userDao.getListUserByName(text, maxSize, offset);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 }

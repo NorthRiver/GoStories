@@ -13,6 +13,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class ProfileViewController {
+	
+	private final String SUBSCRIBE = "Subscribe";
+	private final String UNSUBSCRIBE = "Unsubscribe";
+	
 	@FXML 
 	private Label userLabel;
 	@FXML 
@@ -23,6 +27,8 @@ public class ProfileViewController {
 	private Label storiesLabel;	
 	@FXML 
 	private Button subscribeButton;	
+	@FXML
+	private Label subMessage;
 	@FXML 
 	private Button editButton;	
 	@FXML 
@@ -46,13 +52,15 @@ public class ProfileViewController {
     public void subscribe(ActionEvent event) {
     	FacadeProfile facade = FacadeProfile.getFacade();
     	try {
-    		if (subscribeButton.getText() == "Unsubscribe") {
-    			facade.subscribe(currentUser, AbstractFacade.getUser());
-    			subscribeButton.setText("Subscribe");
+    		if (subscribeButton.getText().equals(UNSUBSCRIBE)) {
+    			facade.unsubscribe(AbstractFacade.getUser(), currentUser);
+    			subscribeButton.setText(SUBSCRIBE);
+    			subMessage.setText("You're now subscribed to " + currentUser.username + " !");
     		}
     		else {
-    			facade.subscribe(currentUser, AbstractFacade.getUser());
-    			subscribeButton.setText("Unsubscribe");
+    			facade.subscribe(AbstractFacade.getUser(), currentUser);
+    			subscribeButton.setText(UNSUBSCRIBE);
+    			subMessage.setText("You've cancelled your subscription to " + currentUser.username + ".");
     		}
     	} catch (Exception e) 
     	{
@@ -61,7 +69,7 @@ public class ProfileViewController {
     	}
     }
 
-    public void init(User user) {
+    public void setUser(User user) {
     	currentUser = user;
     	userLabel.setText(currentUser.username);
     	emailLabel.setText(currentUser.email);
@@ -72,10 +80,8 @@ public class ProfileViewController {
     	else {
     		editButton.setVisible(false);
     	}
-    	FacadeProfile facade = FacadeProfile.getFacade();
-		if (facade.isUserSubscribed(currentUser, AbstractFacade.getUser())) {
-    		subscribeButton.setText("Unsubscribe");
-    		
+		if (FacadeProfile.getFacade().isUserSubscribed(AbstractFacade.getUser(), currentUser)) {
+    		subscribeButton.setText(UNSUBSCRIBE);
     	}
     	//storiesLabel.setText()
     }

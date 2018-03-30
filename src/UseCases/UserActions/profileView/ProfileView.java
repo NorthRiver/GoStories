@@ -18,7 +18,7 @@ public class ProfileView extends Scene {
     public ProfileView(AnchorPane root, double width, double height) {
 		super(root, width, height);
 		
-		URL url = getClass().getResource("UseCasesUserActions.profileView.ProfileStructure.fxml");
+		URL url = getClass().getResource("ProfileStructure.fxml");
 	    FXMLLoader fxmlLoader = new FXMLLoader(url);
 	    try {
 	    AnchorPane root2 = (AnchorPane) fxmlLoader.load();
@@ -31,8 +31,7 @@ public class ProfileView extends Scene {
 	}
 
 	public void init(User user) {
-		controller.init(user);
-        return;
+		controller.setUser(user);
     }
 
 }

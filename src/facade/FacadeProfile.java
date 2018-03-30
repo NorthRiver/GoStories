@@ -29,22 +29,30 @@ public class FacadeProfile extends AbstractFacade {
 		if( facadeSingleton == null ) {
 			facadeSingleton = new FacadeProfile();	
 		}
-		return facadeSingleton;}
-
+		return facadeSingleton;
+	}
 
 
     /**
      * @param user User 
      * @return
      */
-    public void subscribe(User userSubscribed, User userSubscriber) {
-		if (userDao.isUserSubscribed(userSubscribed, userSubscriber)) {
-			userDao.cancelSubscription(userSubscribed, userSubscriber);
+    public void subscribe(User subscriber, User author) {
+		try {
+				userDao.subscribeToAuthor(subscriber, author);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		else {
-			userDao.subscribeToAuthor(userSubscriber, userSubscribed);
+    }
+    
+    public void unsubscribe(User subscriber, User author) {
+    	try {
+    		userDao.cancelSubscription(subscriber, author);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-        return;
     }
 
     /**
@@ -66,8 +74,14 @@ public class FacadeProfile extends AbstractFacade {
         return userDao.getSubscribedUser(user);
     }
 
-    public Boolean isUserSubscribed(User subscribed, User subscriber) {
-    	return userDao.isUserSubscribed(subscribed, subscriber);    	
+    public Boolean isUserSubscribed(User subscriber, User author) {
+    	try {
+			return userDao.isUserSubscribed(subscriber, author);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;    	
     }
     /**
      * @return

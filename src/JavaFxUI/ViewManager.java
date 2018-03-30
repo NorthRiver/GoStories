@@ -45,14 +45,16 @@ public class ViewManager extends Application {
 //		Story story = FactoryDAO.getFactory().getStoryDAO().getStoryByName("demoStory");
 //		User user = FactoryDAO.getFactory().getUserDAO().findUserByUsername("demoUser");
 //		User author = FactoryDAO.getFactory().getUserDAO().findUserByUsername("demoAuthor");
-//		User admin = FactoryDAO.getFactory().getUserDAO().findUserByUsername("demoAdmin");
-//		AbstractFacade.setUser(admin);
+		User admin = FactoryDAO.getFactory().getUserDAO().findUserByUsername("demoAdmin");
+		AbstractFacade.setUser(admin);
 //		Page page = FactoryDAO.getFactory().getPageDAO().getPageByNumber(story.title, 2);
 		/******************** view loading ********************/
 //		goToHome();
 //		goToReadReport();
 //		goToStoryPage(page, story);
 //		goToStoryInfo(story);
+//		goToUserProfile(author);
+		goToManageUser();
 	}
 
     /**
@@ -80,7 +82,7 @@ public class ViewManager extends Application {
     /**
      * @return
      */
-    public static void gotToRegister() {
+    public static void goToRegister() {
     	mainStage.setTitle("Register");
     	AnchorPane root = new AnchorPane();
 		Scene scene = new RegisterView(root,300, 300);
@@ -117,7 +119,7 @@ public class ViewManager extends Application {
     /**
      * @return
      */
-    public static void gotToManageUser() {
+    public static void goToManageUser() {
     	mainStage.setTitle("Manage User");
     	AnchorPane root = new AnchorPane();
 		Scene scene = new ManageUserView(root,400, 600);
@@ -199,7 +201,7 @@ public class ViewManager extends Application {
     public static void goToUserProfile(User user) {
     	mainStage.setTitle("User Profile");
     	AnchorPane root = new AnchorPane();
-		Scene scene = new LoginView(root,400, 600);
+		Scene scene = new ProfileView(root,600, 400);
 		((ProfileView)scene).init(user);
 		mainStage.setScene(scene);
         mainStage.show();

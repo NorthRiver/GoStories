@@ -3,75 +3,14 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UseCases.AdminActions.manageUserView.ManageUserController">
    <children>
+      <Text layoutX="92.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="121.47003173828125" />
       <TextField layoutX="92.0" layoutY="38.0" />
-      <Button layoutX="274.0" layoutY="38.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="102.0" text="Search" onAction="#displaySearchResult"/>
-      <VBox layoutX="78.0" layoutY="109.0" prefHeight="258.0" prefWidth="467.0">
-         <children>
-            <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="480.0">
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="138.6243896484375" fx:id="user1" />
-                  <Button mnemonicParsing="false" onAction="#renameButton1" text="Rename" />
-                  <Button fx:id="banButton" mnemonicParsing="false" onAction="#switchBanButton1" prefHeight="25.0" prefWidth="70.0" text="Ban" />
-               </children>
-            </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="480.0">
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="138.6243896484375" fx:id="user2" />
-                  <Button mnemonicParsing="false" onAction="#renameButto2n" text="Rename" />
-                  <Button fx:id="banButton1" mnemonicParsing="false" onAction="#switchBanButton2" prefHeight="25.0" prefWidth="70.0" text="Ban" />
-               </children>
-            </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="480.0">
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="138.6243896484375" fx:id="user3" />
-                  <Button mnemonicParsing="false" onAction="#renameButton3" text="Rename" />
-                  <Button fx:id="banButton2" mnemonicParsing="false" onAction="#switchBanButton3" prefHeight="25.0" prefWidth="70.0" text="Ban" />
-               </children>
-            </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="480.0">
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="138.6243896484375" fx:id="user4" />
-                  <Button mnemonicParsing="false" onAction="#renameButton4" text="Rename" />
-                  <Button fx:id="banButton3" mnemonicParsing="false" onAction="#switchBanButton4" prefHeight="25.0" prefWidth="70.0" text="Ban" />
-               </children>
-            </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="480.0">
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="138.6243896484375" fx:id="user5" />
-                  <Button mnemonicParsing="false" onAction="#renameButton5" text="Rename" />
-                  <Button fx:id="banButton4" mnemonicParsing="false" onAction="#switchBanButton5" prefHeight="25.0" prefWidth="70.0" text="Ban" />
-               </children>
-            </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="480.0">
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="138.6243896484375" fx:id="user6" />
-                  <Button mnemonicParsing="false" onAction="#renameButton6" text="Rename" />
-                  <Button fx:id="banButton5" mnemonicParsing="false" onAction="#switchBanButton6" prefHeight="25.0" prefWidth="70.0" text="Ban" />
-               </children>
-            </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="480.0">
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="138.6243896484375" fx:id="user7" />
-                  <Button mnemonicParsing="false" onAction="#renameButton7" text="Rename" />
-                  <Button fx:id="banButton6" mnemonicParsing="false" onAction="#switchBanButton7" prefHeight="25.0" prefWidth="70.0" text="Ban" />
-               </children>
-            </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="480.0">
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="138.6243896484375" fx:id="user8" />
-                  <Button mnemonicParsing="false" onAction="#renameButton8" text="Rename" />
-                  <Button fx:id="banButton7" mnemonicParsing="false" onAction="#switchBanButton8" prefHeight="25.0" prefWidth="70.0" text="Ban" />
-               </children>
-            </HBox>
-         </children>
-      </VBox>
-      <Text layoutX="92.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="121.47003173828125"  />
+      <Button layoutX="274.0" layoutY="38.0" mnemonicParsing="false" onAction="#displaySearchResult" prefHeight="25.0" prefWidth="102.0" text="Search" />
+      <VBox fx:id="userListVbox" layoutX="78.0" layoutY="109.0" prefHeight="258.0" prefWidth="467.0" />
    </children>
 </AnchorPane>
